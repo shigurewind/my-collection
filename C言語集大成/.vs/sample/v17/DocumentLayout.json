@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|solutionrelative:enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|solutionrelative:player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|solutionrelative:enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|solutionrelative:player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\field.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|solutionrelative:field.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\title.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|solutionrelative:title.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\field.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5D6F1C2E-393D-4152-829C-A3453EE4FA68}|sample.vcxproj|solutionrelative:field.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "field.h",
+              "DocumentMoniker": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\field.h",
+              "RelativeDocumentMoniker": "field.h",
+              "ToolTip": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\field.h",
+              "RelativeToolTip": "field.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-11T07:55:25.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "title.cpp",
+              "DocumentMoniker": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\title.cpp",
+              "RelativeDocumentMoniker": "title.cpp",
+              "ToolTip": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\title.cpp",
+              "RelativeToolTip": "title.cpp",
+              "ViewState": "AQIAAKkAAAAAAAAAAAAAALkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-11T07:55:23.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "field.cpp",
+              "DocumentMoniker": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\field.cpp",
+              "RelativeDocumentMoniker": "field.cpp",
+              "ToolTip": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\field.cpp",
+              "RelativeToolTip": "field.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-11T07:47:02.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "player.h",
+              "DocumentMoniker": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\player.h",
+              "RelativeDocumentMoniker": "player.h",
+              "ToolTip": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\player.h",
+              "RelativeToolTip": "player.h",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAABgAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-11T07:45:11.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "player.cpp",
+              "DocumentMoniker": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\player.cpp",
+              "RelativeDocumentMoniker": "player.cpp",
+              "ToolTip": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\player.cpp",
+              "RelativeToolTip": "player.cpp",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAAIcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-11T07:43:57.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "enemy.h",
+              "DocumentMoniker": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\enemy.h",
+              "RelativeDocumentMoniker": "enemy.h",
+              "ToolTip": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\enemy.h",
+              "RelativeToolTip": "enemy.h",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-11T07:43:55.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "enemy.cpp",
+              "DocumentMoniker": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\enemy.cpp",
+              "RelativeDocumentMoniker": "enemy.cpp",
+              "ToolTip": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\enemy.cpp",
+              "RelativeToolTip": "enemy.cpp",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-11T07:43:37.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\ths41091\\Desktop\\GP11\\sample16_Enemy\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-11T07:43:20.968Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
