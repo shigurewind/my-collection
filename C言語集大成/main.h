@@ -21,6 +21,7 @@
 #include <iomanip>
 #include <random>
 #include <conio.h>
+#include <string>
 
 /*******************************************************************************
 * マクロ定義
@@ -28,7 +29,7 @@
 
 enum {
 	GAME_TITLE,
-	GAME_FIELD,//Field　mode
+	GAME_FIELD, //Field　mode
 	
 
 	GAME_END,

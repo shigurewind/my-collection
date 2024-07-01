@@ -70,7 +70,10 @@ void UpdateEnemy(void)
 
 
 
+		//std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
 		int dir = GetRand(0, 5);
+
 
 		switch (dir)
 		{

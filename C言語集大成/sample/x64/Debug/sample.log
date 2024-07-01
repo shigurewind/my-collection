@@ -1,6 +1,14 @@
-﻿  enemy.cpp
-  field.cpp
-  main.cpp
-  player.cpp
-  コードを生成中...
-  sample.vcxproj -> C:\Users\ths41091\Desktop\GP11\sample16_Enemy\x64\Debug\sample.exe
+﻿  player.cpp
+F:\mygithub\my-collection\C言語集大成\player.cpp(38,2): warning C4838: 从“int”转换到“char”需要收缩转换
+F:\mygithub\my-collection\C言語集大成\player.cpp(38,2): warning C4305: “初始化”: 从“int”到“char”截断
+F:\mygithub\my-collection\C言語集大成\player.cpp(38,2): warning C4309: “初始化”: 截断常量值
+F:\mygithub\my-collection\C言語集大成\player.cpp(38,8): warning C4838: 从“int”转换到“char”需要收缩转换
+F:\mygithub\my-collection\C言語集大成\player.cpp(38,8): warning C4305: “初始化”: 从“int”到“char”截断
+F:\mygithub\my-collection\C言語集大成\player.cpp(38,8): warning C4309: “初始化”: 截断常量值
+F:\mygithub\my-collection\C言語集大成\player.cpp(38,14): warning C4838: 从“int”转换到“char”需要收缩转换
+F:\mygithub\my-collection\C言語集大成\player.cpp(38,14): warning C4305: “初始化”: 从“int”到“char”截断
+F:\mygithub\my-collection\C言語集大成\player.cpp(38,14): warning C4309: “初始化”: 截断常量值
+F:\mygithub\my-collection\C言語集大成\player.cpp(38,20): warning C4838: 从“int”转换到“char”需要收缩转换
+F:\mygithub\my-collection\C言語集大成\player.cpp(38,20): warning C4305: “初始化”: 从“int”到“char”截断
+F:\mygithub\my-collection\C言語集大成\player.cpp(38,20): warning C4309: “初始化”: 截断常量值
+  sample.vcxproj -> F:\mygithub\my-collection\C言語集大成\x64\Debug\sample.exe

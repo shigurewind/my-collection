@@ -33,6 +33,16 @@
 *******************************************************************************/
 PLAYER g_Player[PLAYER_MAX];
 
+//プレイヤーの方向
+char div_p[4]{
+	'→','↑','←','↓'
+};
+//初期化
+char div_player = div_p[0];
+
+
+
+
 // フィールド用メンバー変数
 
 
@@ -81,6 +91,14 @@ void UpdatePlayer(void)
 	g_Player[0].old_x = g_Player[0].x;
 	g_Player[0].old_y = g_Player[0].y;
 
+	//リアルタイム処理
+	if (_kbhit() == 0)
+	{
+		// ここに少しウェイト入れるとちらつきが抑えられるかも？
+		std::this_thread::sleep_for(std::chrono::milliseconds(200));
+		return;
+	}
+
 	// キー入力処理
 	int key = _getch();
 	if ((key == 0) || (key == 224))	// 特殊Keyならもう１度取得する
@@ -94,22 +112,37 @@ void UpdatePlayer(void)
 	case 'a':
 	case 0x4b:	// ←
 		g_Player[0].x -= 1;
+		div_player = div_p[2];
 		break;
 
 	case 'd':
 	case 0x4d:	// →
 		g_Player[0].x += 1;
+		div_player = div_p[0];
 		break;
 
 	case 'w':
 	case 0x48:	// ↑
 		g_Player[0].y -= 1;
+		div_player = div_p[1];
 		break;
 
 	case 's':
 	case 0x50:	// ↓
 		g_Player[0].y += 1;
+		div_player = div_p[3];
 		break;
+
+	case'j':
+		//打つ
+		break;
+	case'k':
+		//シュート
+		break;
+	case'l':
+		//回復
+		break;
+
 
 	default:
 		break;
@@ -143,7 +176,7 @@ void DrawPlayer(void)
 			continue;
 		}//０以下ならスキップ
 
-		SetField(g_Player[i].y, g_Player[i].x, 'P');
+		SetField(g_Player[i].y, g_Player[i].x, div_player);
 	}
 	// プレイヤーをMAPの指定座標へ書き込む
 	
