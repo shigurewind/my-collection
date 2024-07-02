@@ -1,14 +1,8 @@
 ﻿  player.cpp
-F:\mygithub\my-collection\C言語集大成\player.cpp(38,2): warning C4838: 从“int”转换到“char”需要收缩转换
-F:\mygithub\my-collection\C言語集大成\player.cpp(38,2): warning C4305: “初始化”: 从“int”到“char”截断
-F:\mygithub\my-collection\C言語集大成\player.cpp(38,2): warning C4309: “初始化”: 截断常量值
-F:\mygithub\my-collection\C言語集大成\player.cpp(38,8): warning C4838: 从“int”转换到“char”需要收缩转换
-F:\mygithub\my-collection\C言語集大成\player.cpp(38,8): warning C4305: “初始化”: 从“int”到“char”截断
-F:\mygithub\my-collection\C言語集大成\player.cpp(38,8): warning C4309: “初始化”: 截断常量值
-F:\mygithub\my-collection\C言語集大成\player.cpp(38,14): warning C4838: 从“int”转换到“char”需要收缩转换
-F:\mygithub\my-collection\C言語集大成\player.cpp(38,14): warning C4305: “初始化”: 从“int”到“char”截断
-F:\mygithub\my-collection\C言語集大成\player.cpp(38,14): warning C4309: “初始化”: 截断常量值
-F:\mygithub\my-collection\C言語集大成\player.cpp(38,20): warning C4838: 从“int”转换到“char”需要收缩转换
-F:\mygithub\my-collection\C言語集大成\player.cpp(38,20): warning C4305: “初始化”: 从“int”到“char”截断
-F:\mygithub\my-collection\C言語集大成\player.cpp(38,20): warning C4309: “初始化”: 截断常量值
-  sample.vcxproj -> F:\mygithub\my-collection\C言語集大成\x64\Debug\sample.exe
+E:\mygithub\my-collection\C言語集大成\player.cpp(38,6): warning C4838: 'int' から 'char' への変換には縮小変換が必要です
+E:\mygithub\my-collection\C言語集大成\player.cpp(38,6): warning C4305: '初期化中': 'int' から 'char' へ切り詰めます。
+E:\mygithub\my-collection\C言語集大成\player.cpp(38,6): warning C4309: '初期化中': 定数値が切り捨てられました。
+E:\mygithub\my-collection\C言語集大成\player.cpp(38,16): warning C4838: 'int' から 'char' への変換には縮小変換が必要です
+E:\mygithub\my-collection\C言語集大成\player.cpp(38,16): warning C4305: '初期化中': 'int' から 'char' へ切り詰めます。
+E:\mygithub\my-collection\C言語集大成\player.cpp(38,16): warning C4309: '初期化中': 定数値が切り捨てられました。
+  sample.vcxproj -> E:\mygithub\my-collection\C言語集大成\x64\Debug\sample.exe

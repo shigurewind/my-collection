@@ -162,6 +162,8 @@ void DrawField(void)
 	std::system("cls");
 
 	/* ƒ}ƒbƒv•`‰æˆ— */
+	
+
 	for (int i = 0; i < FIELD_H; i++)
 	{
 		std::cout << &field[i][0] << "\n";

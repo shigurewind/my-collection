@@ -35,7 +35,7 @@ PLAYER g_Player[PLAYER_MAX];
 
 //ƒvƒŒƒCƒ„[‚Ì•ûŒü
 char div_p[4]{
-	'¨','ª','©','«'
+	'>','A','<','V'
 };
 //‰Šú‰»
 char div_player = div_p[0];
