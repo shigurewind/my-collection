@@ -162,10 +162,108 @@ void DrawField(void)
 	std::system("cls");
 
 	/* マップ描画処理 */
-	for (int i = 0; i < FIELD_H; i++)
-	{
-		std::cout << &field[i][0] << "\n";
+	if (g_Player->x < MAP_W/2 && g_Player->y< MAP_H/2) {
+		//左上
+		for (int i = 0; i < MAP_H; i++)
+		{
+			for (int j = 0; j < MAP_W;j++ ) {
+				std::cout << field[i][j] ;
+			}
+			std::cout << "\n";
+			
+		}
 	}
+	else if (g_Player->x < MAP_W / 2 && g_Player->y  > FIELD_H - MAP_H / 2) {
+		//左下
+		for (int i = FIELD_H-MAP_H; i < FIELD_H; i++)
+		{
+			for (int j = 0; j < MAP_W; j++) {
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+
+		}
+	}
+	else if (g_Player->x < MAP_W / 2 && MAP_H / 2 <= g_Player->y <= FIELD_H - MAP_H / 2) {
+		//左中
+		for (int i = g_Player->y - MAP_H/2; i < g_Player->y + MAP_H / 2; i++)
+		{
+			for (int j = 0; j < MAP_W; j++) {
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+
+		}
+	}
+	else if (g_Player->x > FIELD_W - MAP_W / 2 && g_Player->y < MAP_H / 2) {
+		//右上
+		for (int i = 0; i < MAP_H; i++)
+		{
+			for (int j = FIELD_W - MAP_W; j < FIELD_W; j++) {
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+
+		}
+	}
+	else if (MAP_W / 2 <= g_Player->x <= FIELD_W - MAP_W / 2 && g_Player->y < MAP_H / 2) {
+		//中上
+		for (int i = 0; i < MAP_H; i++)
+		{
+			for (int j = g_Player->x - MAP_W/2 ; j < g_Player->x + MAP_W / 2; j++) {
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+
+		}
+	}
+	else if (g_Player->x > FIELD_W - MAP_W / 2 && MAP_H / 2 <= g_Player->y <= FIELD_H - MAP_H / 2) {
+		//右中
+		for (int i = g_Player->y - MAP_H / 2; i < g_Player->y + MAP_H / 2; i++)
+		{
+			for (int j = FIELD_W - MAP_W; j < FIELD_W; j++) {
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+
+		}
+	}
+	else if (g_Player->x > FIELD_W - MAP_W / 2 && g_Player->y > FIELD_H - MAP_H / 2) {
+		//右下
+		for (int i = FIELD_H - MAP_H; i < FIELD_H; i++)
+		{
+			for (int j = FIELD_W - MAP_W; j < FIELD_W; j++) {
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+
+		}
+	}
+	else if (MAP_W / 2 <= g_Player->x <= FIELD_W - MAP_W / 2 && g_Player->y > FIELD_H - MAP_H / 2) {
+		//中下
+		for (int i = FIELD_H - MAP_H; i < FIELD_H; i++)
+		{
+			for (int j = g_Player->x - MAP_W / 2; j < g_Player->x + MAP_W / 2; j++) {
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+
+		}
+
+	}
+	else {
+		//中中
+		for (int i = g_Player->y - MAP_H / 2; i < g_Player->y + MAP_H / 2; i++)
+		{
+			for (int j = g_Player->x - MAP_W / 2; j < g_Player->x + MAP_W / 2; j++) {
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+
+		}
+	}
+
+	
 
 	
 
