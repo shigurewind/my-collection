@@ -1,42 +1,37 @@
 /*******************************************************************************
-* É^ÉCÉgÉã:		fieldÉvÉçÉOÉâÉÄ
-* ÉvÉçÉOÉâÉÄñº:	field.cpp
-* çÏê¨é“:		GP11A132 99 äOâ™çÇñæ
-* çÏê¨ì˙:		2024/05/26
-*******************************************************************************/
+ * É^ÉCÉgÉã:		fieldÉvÉçÉOÉâÉÄ
+ * ÉvÉçÉOÉâÉÄñº:	field.cpp
+ * çÏê¨é“:		GP11A132 99 äOâ™çÇñæ
+ * çÏê¨ì˙:		2024/05/26
+ *******************************************************************************/
 
 /*******************************************************************************
-* ÉCÉìÉNÉãÅ[ÉhÉtÉ@ÉCÉã
-*******************************************************************************/
+ * ÉCÉìÉNÉãÅ[ÉhÉtÉ@ÉCÉã
+ *******************************************************************************/
 #include "main.h"
 #include "field.h"
 #include "player.h"
 
+/*******************************************************************************
+ * É}ÉNÉçíËã`
+ *******************************************************************************/
 
 /*******************************************************************************
-* É}ÉNÉçíËã`
-*******************************************************************************/
-
-
-/*******************************************************************************
-* ç\ë¢ëÃíËã`
-*******************************************************************************/
-
+ * ç\ë¢ëÃíËã`
+ *******************************************************************************/
 
 /*******************************************************************************
-* ÉvÉçÉgÉ^ÉCÉvêÈåæ(Ç±ÇÒÇ»ä÷êîÇópà”ÇµÇƒÇ†ÇËÇ‹Ç∑ÇÊêÈåæ/ä÷êîÇÃê‡ñæèë)
-*******************************************************************************/
-
-
+ * ÉvÉçÉgÉ^ÉCÉvêÈåæ(Ç±ÇÒÇ»ä÷êîÇópà”ÇµÇƒÇ†ÇËÇ‹Ç∑ÇÊêÈåæ/ä÷êîÇÃê‡ñæèë)
+ *******************************************************************************/
 
 /*******************************************************************************
-* ÉOÉçÅ[ÉoÉãïœêî
-*******************************************************************************/
+ * ÉOÉçÅ[ÉoÉãïœêî
+ *******************************************************************************/
 extern PLAYER g_Player[PLAYER_MAX];
 
-
 // É}ÉbÉvÉfÅ[É^
-char field_org[FIELD_H][FIELD_W + 1] = { // ÉIÉäÉWÉiÉãfieldÉfÅ[É^Åiâ°Ç+1ÇµÇƒÇ¢ÇÈÇÃÇÕï∂ññÇÃNULLÇÃï™Åj
+char field_org[FIELD_H][FIELD_W + 1] = {
+	// ÉIÉäÉWÉiÉãfieldÉfÅ[É^Åiâ°Ç+1ÇµÇƒÇ¢ÇÈÇÃÇÕï∂ññÇÃNULLÇÃï™Åj
 	"****************************************************************************************************",
 	"*                                      *                                                           *",
 	"*                                      *                                                           *",
@@ -80,7 +75,8 @@ char field_org[FIELD_H][FIELD_W + 1] = { // ÉIÉäÉWÉiÉãfieldÉfÅ[É^Åiâ°Ç+1ÇµÇƒÇ¢Ç
 
 };
 
-char field[FIELD_H][FIELD_W + 1] = {	// ï\é¶ópfieldÉfÅ[É^Åiâ°Ç+1ÇµÇƒÇ¢ÇÈÇÃÇÕï∂ññÇÃNULLÇÃï™Åj
+char field[FIELD_H][FIELD_W + 1] = {
+	// ï\é¶ópfieldÉfÅ[É^Åiâ°Ç+1ÇµÇƒÇ¢ÇÈÇÃÇÕï∂ññÇÃNULLÇÃï™Åj
 	"****************************************************************************************************",
 	"*                                                                                                  *",
 	"*                                                                                                  *",
@@ -123,153 +119,145 @@ char field[FIELD_H][FIELD_W + 1] = {	// ï\é¶ópfieldÉfÅ[É^Åiâ°Ç+1ÇµÇƒÇ¢ÇÈÇÃÇÕï∂ñ
 	"****************************************************************************************************",
 };
 
-
-
 // fieldÇÃèâä˙âªèàóù
 void InitField(void)
 {
 	/* ÉIÉäÉWÉiÉãfieldÉfÅ[É^Çï\é¶ópfieldÉfÅ[É^Ç÷ÉRÉsÅ[ */
 	memcpy(field, field_org, sizeof(field));
-	//SetMode(GAME_PLAYER);
+	// SetMode(GAME_PLAYER);
 }
-
 
 // fieldÇÃèIóπèàóù
 void UninitField(void)
 {
-
 }
-
 
 // fieldÇÃçXêVèàóù
 void UpdateField(void)
 {
 	/* ÉIÉäÉWÉiÉãfieldÉfÅ[É^Çï\é¶ópfieldÉfÅ[É^Ç÷ÉRÉsÅ[ */
 	memcpy(field, field_org, sizeof(field));
-
-	
-
 }
-
 
 // fieldï`âÊèàóù
 void DrawField(void)
 {
 	/* èàóùë¨ìxí≤êÆ */
-	//std::this_thread::sleep_for(std::chrono::milliseconds(10));
+	// std::this_thread::sleep_for(std::chrono::milliseconds(10));
 
 	/* âÊñ ÉNÉäÉA */
 	std::system("cls");
 
 	/* É}ÉbÉvï`âÊèàóù */
-	if (g_Player->x < MAP_W/2 && g_Player->y< MAP_H/2) {
-		//ç∂è„
+	if (g_Player->x < MAP_W / 2 && g_Player->y < MAP_H / 2)
+	{
+		// ç∂è„
 		for (int i = 0; i < MAP_H; i++)
 		{
-			for (int j = 0; j < MAP_W;j++ ) {
-				std::cout << field[i][j] ;
-			}
-			std::cout << "\n";
-			
-		}
-	}
-	else if (g_Player->x < MAP_W / 2 && g_Player->y  > FIELD_H - MAP_H / 2) {
-		//ç∂â∫
-		for (int i = FIELD_H-MAP_H; i < FIELD_H; i++)
-		{
-			for (int j = 0; j < MAP_W; j++) {
+			for (int j = 0; j < MAP_W; j++)
+			{
 				std::cout << field[i][j];
 			}
 			std::cout << "\n";
-
 		}
 	}
-	else if (g_Player->x < MAP_W / 2 && MAP_H / 2 <= g_Player->y <= FIELD_H - MAP_H / 2) {
-		//ç∂íÜ
-		for (int i = g_Player->y - MAP_H/2; i < g_Player->y + MAP_H / 2; i++)
-		{
-			for (int j = 0; j < MAP_W; j++) {
-				std::cout << field[i][j];
-			}
-			std::cout << "\n";
-
-		}
-	}
-	else if (g_Player->x > FIELD_W - MAP_W / 2 && g_Player->y < MAP_H / 2) {
-		//âEè„
-		for (int i = 0; i < MAP_H; i++)
-		{
-			for (int j = FIELD_W - MAP_W; j < FIELD_W; j++) {
-				std::cout << field[i][j];
-			}
-			std::cout << "\n";
-
-		}
-	}
-	else if (MAP_W / 2 <= g_Player->x <= FIELD_W - MAP_W / 2 && g_Player->y < MAP_H / 2) {
-		//íÜè„
-		for (int i = 0; i < MAP_H; i++)
-		{
-			for (int j = g_Player->x - MAP_W/2 ; j < g_Player->x + MAP_W / 2; j++) {
-				std::cout << field[i][j];
-			}
-			std::cout << "\n";
-
-		}
-	}
-	else if (g_Player->x > FIELD_W - MAP_W / 2 && MAP_H / 2 <= g_Player->y <= FIELD_H - MAP_H / 2) {
-		//âEíÜ
-		for (int i = g_Player->y - MAP_H / 2; i < g_Player->y + MAP_H / 2; i++)
-		{
-			for (int j = FIELD_W - MAP_W; j < FIELD_W; j++) {
-				std::cout << field[i][j];
-			}
-			std::cout << "\n";
-
-		}
-	}
-	else if (g_Player->x > FIELD_W - MAP_W / 2 && g_Player->y > FIELD_H - MAP_H / 2) {
-		//âEâ∫
+	else if (g_Player->x < MAP_W / 2 && g_Player->y > FIELD_H - MAP_H / 2)
+	{
+		// ç∂â∫
 		for (int i = FIELD_H - MAP_H; i < FIELD_H; i++)
 		{
-			for (int j = FIELD_W - MAP_W; j < FIELD_W; j++) {
+			for (int j = 0; j < MAP_W; j++)
+			{
 				std::cout << field[i][j];
 			}
 			std::cout << "\n";
-
 		}
 	}
-	else if (MAP_W / 2 <= g_Player->x <= FIELD_W - MAP_W / 2 && g_Player->y > FIELD_H - MAP_H / 2) {
-		//íÜâ∫
-		for (int i = FIELD_H - MAP_H; i < FIELD_H; i++)
-		{
-			for (int j = g_Player->x - MAP_W / 2; j < g_Player->x + MAP_W / 2; j++) {
-				std::cout << field[i][j];
-			}
-			std::cout << "\n";
-
-		}
-
-	}
-	else {
-		//íÜíÜ
+	else if (g_Player->x < MAP_W / 2 && MAP_H / 2 <= g_Player->y <= FIELD_H - MAP_H / 2)
+	{
+		// ç∂íÜ
 		for (int i = g_Player->y - MAP_H / 2; i < g_Player->y + MAP_H / 2; i++)
 		{
-			for (int j = g_Player->x - MAP_W / 2; j < g_Player->x + MAP_W / 2; j++) {
+			for (int j = 0; j < MAP_W; j++)
+			{
 				std::cout << field[i][j];
 			}
 			std::cout << "\n";
-
 		}
 	}
-
-	
-
-	
-
-
+	else if (g_Player->x > FIELD_W - MAP_W / 2 && g_Player->y < MAP_H / 2)
+	{
+		// âEè„
+		for (int i = 0; i < MAP_H; i++)
+		{
+			for (int j = FIELD_W - MAP_W; j < FIELD_W; j++)
+			{
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+		}
+	}
+	else if (MAP_W / 2 <= g_Player->x <= FIELD_W - MAP_W / 2 && g_Player->y < MAP_H / 2)
+	{
+		// íÜè„
+		for (int i = 0; i < MAP_H; i++)
+		{
+			for (int j = g_Player->x - MAP_W / 2; j < g_Player->x + MAP_W / 2; j++)
+			{
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+		}
+	}
+	else if (g_Player->x > FIELD_W - MAP_W / 2 && MAP_H / 2 <= g_Player->y <= FIELD_H - MAP_H / 2)
+	{
+		// âEíÜ
+		for (int i = g_Player->y - MAP_H / 2; i < g_Player->y + MAP_H / 2; i++)
+		{
+			for (int j = FIELD_W - MAP_W; j < FIELD_W; j++)
+			{
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+		}
+	}
+	else if (g_Player->x > FIELD_W - MAP_W / 2 && g_Player->y > FIELD_H - MAP_H / 2)
+	{
+		// âEâ∫
+		for (int i = FIELD_H - MAP_H; i < FIELD_H; i++)
+		{
+			for (int j = FIELD_W - MAP_W; j < FIELD_W; j++)
+			{
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+		}
+	}
+	else if (MAP_W / 2 <= g_Player->x <= FIELD_W - MAP_W / 2 && g_Player->y > FIELD_H - MAP_H / 2)
+	{
+		// íÜâ∫
+		for (int i = FIELD_H - MAP_H; i < FIELD_H; i++)
+		{
+			for (int j = g_Player->x - MAP_W / 2; j < g_Player->x + MAP_W / 2; j++)
+			{
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+		}
+	}
+	else
+	{
+		// íÜíÜ
+		for (int i = g_Player->y - MAP_H / 2; i < g_Player->y + MAP_H / 2; i++)
+		{
+			for (int j = g_Player->x - MAP_W / 2; j < g_Player->x + MAP_W / 2; j++)
+			{
+				std::cout << field[i][j];
+			}
+			std::cout << "\n";
+		}
+	}
 }
-
 
 // éwíËÇµÇΩç¿ïWÇ…dataÇèëÇ´çûÇﬁ
 void SetField(int y, int x, char data)
@@ -277,37 +265,33 @@ void SetField(int y, int x, char data)
 	field[y][x] = data;
 }
 
-
 // éwíËÇµÇΩç¿ïWÇ…èëÇ©ÇÍÇƒÇ¢ÇÈfieldÉfÅ[É^ÇéÊìæÇ∑ÇÈ
 char GetField(int y, int x)
 {
 	return field[y][x];
 }
 
-
 // éwíËÇµÇΩç¿ïWÇÕOKÇ»èÍèäÅH
 // OKÇ»èÍèäÇ»ÇÁ0
 // NGÇ»èÍèäÇ»ÇÁ0à»äO
 int CheckField(int y, int x)
 {
-	int ans = 0;	// Ç∆ÇËÇ†Ç¶Ç∏OKÇÉZÉbÉgÇµÇƒÇ®Ç≠
+	int ans = 0; // Ç∆ÇËÇ†Ç¶Ç∏OKÇÉZÉbÉgÇµÇƒÇ®Ç≠
 
 	// NGÇ»èÍèäÅH
 	char data = field[y][x];
-	switch(data)
+	switch (data)
 	{
 	case '*':
-		ans = 1;	//ï« ÇªÇÃèÍèäÇÕNGÇæÇ¡ÇΩÇÃÇ≈1ÇÉZÉbÉgÇ∑ÇÈ
+		ans = 1; // ï« ÇªÇÃèÍèäÇÕNGÇæÇ¡ÇΩÇÃÇ≈1ÇÉZÉbÉgÇ∑ÇÈ
 		break;
 	case '#':
-		ans = 2;    //ëêÇﬁÇÁÅ@ì¸ÇÍÇÈ
+		ans = 2; // ëêÇﬁÇÁÅ@ì¸ÇÍÇÈ
 		break;
 
 	default:
 		break;
 	}
 
-	return ans;		// åãâ Çï‘Ç∑
+	return ans; // åãâ Çï‘Ç∑
 }
-
-

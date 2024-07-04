@@ -1,6 +1,11 @@
-﻿  field.cpp
+﻿  enemy.cpp
+  field.cpp
 F:\mygithub\my-collection\C言語集大成\field.cpp(187,48): warning C4804: “<=”: 在操作中使用类型“bool”不安全
 F:\mygithub\my-collection\C言語集大成\field.cpp(209,21): warning C4804: “<=”: 在操作中使用类型“bool”不安全
 F:\mygithub\my-collection\C言語集大成\field.cpp(220,58): warning C4804: “<=”: 在操作中使用类型“bool”不安全
 F:\mygithub\my-collection\C言語集大成\field.cpp(242,21): warning C4804: “<=”: 在操作中使用类型“bool”不安全
+  main.cpp
+  player.cpp
+  title.cpp
+  正在生成代码...
   sample.vcxproj -> F:\mygithub\my-collection\C言語集大成\x64\Debug\sample.exe
