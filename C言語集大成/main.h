@@ -23,6 +23,12 @@
 #include <conio.h>
 #include <string>
 
+//plane code
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <windows.h>
+
 /*******************************************************************************
 * マクロ定義
 *******************************************************************************/
@@ -30,7 +36,7 @@
 enum {
 	GAME_TITLE,
 	GAME_FIELD, //Field　mode
-	
+
 
 	GAME_END,
 };
@@ -57,6 +63,8 @@ void Draw(void);
 int  GetMode(void);
 void SetMode(int mode);
 int  GetRand(int min, int max);	// ランダム取得
+
+extern int interval;
 
 
 

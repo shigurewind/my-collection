@@ -13,6 +13,8 @@
 #include "field.h"
 #include "player.h"
 #include "enemy.h"
+#include "arrow.h"
+#include "ui.h"
 
 /*******************************************************************************
 * マクロ定義
@@ -35,6 +37,10 @@
 
 int g_Mode = GAME_FIELD;		// 現在動作している状態（ゲームモード）
 
+int interval = 1;
+
+
+
 
 /*******************************************************************************
  関数名:	int main( void )
@@ -49,9 +55,25 @@ int main(void)
 	// ゲームモードが終了じゃない間、永久に繰り返す
 	while (GetMode() < GAME_END)
 	{
-		Update();	// ゲーム全体の更新処理
 
+		//while (interval % timespace == 0) 
+		Update();	// ゲーム全体の更新処理
 		Draw();		// ゲーム全体の描画処理
+
+
+
+		if (interval <= 240) {
+			interval++;
+		}
+		else {
+			interval = 0;
+		}
+
+
+
+
+
+
 	}
 
 	Uninit();		// ゲーム全体の終了処理
@@ -69,6 +91,8 @@ void Init(void)
 
 	//Fieldの初期化処理
 	InitField();
+
+	InitUI();
 
 	//Playerの初期化
 	InitPlayer();
@@ -102,7 +126,7 @@ void Uninit(void)
 void Update(void)
 {
 	// 現在のモードによって処理分けをする
-	switch ( GetMode() )
+	switch (GetMode())
 	{
 	case GAME_TITLE:
 		UpdateTitle();
@@ -112,13 +136,21 @@ void Update(void)
 
 		UpdatePlayer();
 		UpdateEnemy();
+		UpdateArrow();
 		UpdateField();
-		
+		UpdateUI();
+
+
+
+
+
+
+
 		break;
-	
-		
-	// 本来はここへ他のゲームモードを追加する
-	// 例えば、フィールドとかバトルとか、エンディングとか、、、
+
+
+		// 本来はここへ他のゲームモードを追加する
+		// 例えば、フィールドとかバトルとか、エンディングとか、、、
 
 
 	}
@@ -129,7 +161,7 @@ void Update(void)
 // ゲーム全体の描画処理
 void Draw(void)
 {
-	
+
 	// 現在のモードによって処理分けをする
 	switch (GetMode())
 	{
@@ -140,14 +172,17 @@ void Draw(void)
 	case GAME_FIELD:
 		DrawPlayer();
 		DrawEnemy();
+		DrawArrow();
 
 		DrawField();
-		
-		break;
-	
 
-	// 本来はここへ他のゲームモードを追加する
-	// 例えば、フィールドとかバトルとか、エンディングとか、、、
+		DrawUI();
+
+		break;
+
+
+		// 本来はここへ他のゲームモードを追加する
+		// 例えば、フィールドとかバトルとか、エンディングとか、、、
 
 
 

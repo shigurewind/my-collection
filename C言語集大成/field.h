@@ -33,6 +33,9 @@ void UninitField(void);
 void UpdateField(void);
 void DrawField(void);
 
+
+void AddinUI(int startY, int endY, int startX, int endX, int offsetY = 0, int offsetX = 0);
+
 // w’è‚µ‚½À•W‚Édata‚ğ‘‚«‚Ş
 void SetField(int y, int x, char data);
 
@@ -43,4 +46,6 @@ char GetField(int y, int x);
 // OK‚ÈêŠ‚È‚ç0
 // NG‚ÈêŠ‚È‚ç0ˆÈŠO
 int CheckField(int y, int x);
+
+
 

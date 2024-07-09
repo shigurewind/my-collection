@@ -29,6 +29,11 @@ struct PLAYER
 	int old_y;			// 一歩前のY座標
 
 	int hp;             //生命力
+	int flag;           //方向 0:右  1:上  2:左  3:下
+
+	int arrownum;       //持っている矢の数
+
+	int arrowIsOut;     //出た矢の番号
 };
 
 
@@ -43,5 +48,9 @@ void UninitPlayer(void);
 void UpdatePlayer(void);
 void DrawPlayer(void);
 
+//PLAYER* GetPlayer() {
+//	return &g_Player[0];
+//}
 
+extern PLAYER g_Player[];
 

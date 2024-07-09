@@ -33,6 +33,8 @@
 *******************************************************************************/
 ENEMY g_Enemy[ENEMY_MAX];
 
+int enemySpeed;//敵の移動時間間隔
+
 
 
 
@@ -50,6 +52,8 @@ void InitEnemy(void)
 
 	g_Enemy[2].y = 6;
 	g_Enemy[2].x = 20;
+
+	enemySpeed = 6;
 }
 
 
@@ -63,64 +67,68 @@ void UninitEnemy(void)
 // プレイヤーの更新処理
 void UpdateEnemy(void)
 {
-	// 動く前の座標を保存しておく（移動してぶつかった時はこの座標へ戻す為）
-	for (int i = 0; i < ENEMY_MAX; i++) {
-		g_Enemy[i].old_x = g_Enemy[i].x;
-		g_Enemy[i].old_y = g_Enemy[i].y;
+	if (interval % enemySpeed == 0) {
 
 
 
-		//std::this_thread::sleep_for(std::chrono::milliseconds(500));
+		// 動く前の座標を保存しておく（移動してぶつかった時はこの座標へ戻す為）
+		for (int i = 0; i < ENEMY_MAX; i++) {
+			g_Enemy[i].old_x = g_Enemy[i].x;
+			g_Enemy[i].old_y = g_Enemy[i].y;
 
-		int dir = GetRand(0, 5);
 
 
-		switch (dir)
-		{
-		case 0:
-			g_Enemy[i].x--;
-			break;
-		case 1:
-			g_Enemy[i].x++;
-			break;
-		case 2:
-			g_Enemy[i].y--;
-			break;
-		case 3:
-			g_Enemy[i].y++;
-			break;
-		default:
-			break;
+			//std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
+			int dir = GetRand(0, 5);
+
+
+			switch (dir)
+			{
+			case 0:
+				g_Enemy[i].x--;
+				break;
+			case 1:
+				g_Enemy[i].x++;
+				break;
+			case 2:
+				g_Enemy[i].y--;
+				break;
+			case 3:
+				g_Enemy[i].y++;
+				break;
+			default:
+				break;
+			}
+
+
+			// MAPとの当たり判定処理
+			// 移動した先はNGな場所？
+			int answer = CheckField(g_Enemy[i].y, g_Enemy[i].x);
+
+			switch (answer)
+			{
+			case 1:	// 移動してはNGな場所だったので前の場所へ戻す
+				g_Enemy[i].y = g_Enemy[i].old_y;
+				g_Enemy[i].x = g_Enemy[i].old_x;
+				break;
+
+			default:
+				break;
+			}
+
 		}
 
-
-		// MAPとの当たり判定処理
-		// 移動した先はNGな場所？
-		int answer = CheckField(g_Enemy[i].y, g_Enemy[i].x);
-
-		switch (answer)
-		{
-		case 1:	// 移動してはNGな場所だったので前の場所へ戻す
-			g_Enemy[i].y = g_Enemy[i].old_y;
-			g_Enemy[i].x = g_Enemy[i].old_x;
-			break;
-
-		default:
-			break;
-		}
 
 	}
-	
 
-	
 
-	
 
 }
 
-char mark[ENEMY_MAX]{
-	'E','H','B'
-};
+//char mark[ENEMY_MAX]{
+//	'E','H','B'
+//};
 
 // プレイヤーの描画処理
 void DrawEnemy(void)
@@ -128,9 +136,9 @@ void DrawEnemy(void)
 
 	for (int i = 0; i < ENEMY_MAX; i++) {
 		// プレイヤーをMAPの指定座標へ書き込む
-		SetField(g_Enemy[i].y, g_Enemy[i].x, mark[i]);
+		SetField(g_Enemy[i].y, g_Enemy[i].x, 'E');
 	}
-	
+
 }
 
 
