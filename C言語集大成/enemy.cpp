@@ -44,6 +44,10 @@ int enemySpeed;//敵の移動時間間隔
 void InitEnemy(void)
 {
 	// 構造体の初期化
+	for (int i = 0; i < ENEMY_MAX; i++) {
+		g_Enemy[i].alive = true;
+	}
+
 	g_Enemy[0].y = 5;
 	g_Enemy[0].x = 25;
 
@@ -53,7 +57,7 @@ void InitEnemy(void)
 	g_Enemy[2].y = 6;
 	g_Enemy[2].x = 20;
 
-	enemySpeed = 6;
+	enemySpeed = 8;
 }
 
 
@@ -112,6 +116,10 @@ void UpdateEnemy(void)
 				g_Enemy[i].y = g_Enemy[i].old_y;
 				g_Enemy[i].x = g_Enemy[i].old_x;
 				break;
+			case 3:
+				printf("ぶつかりました");
+				break;
+
 
 			default:
 				break;
@@ -135,8 +143,11 @@ void DrawEnemy(void)
 {
 
 	for (int i = 0; i < ENEMY_MAX; i++) {
-		// プレイヤーをMAPの指定座標へ書き込む
-		SetField(g_Enemy[i].y, g_Enemy[i].x, 'E');
+		if (g_Enemy[i].alive == true) {
+			// プレイヤーをMAPの指定座標へ書き込む
+			SetField(g_Enemy[i].y, g_Enemy[i].x, 'E');
+		}
+
 	}
 
 }

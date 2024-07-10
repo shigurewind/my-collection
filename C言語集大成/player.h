@@ -34,6 +34,14 @@ struct PLAYER
 	int arrownum;       //‚Á‚Ä‚¢‚é–î‚Ì”
 
 	int arrowIsOut;     //o‚½–î‚Ì”Ô†
+
+	int attack_x1;
+	int attack_y1;
+
+	int attack_x2;
+	int attack_y2;
+
+	BOOL isAttack;      //UŒ‚‚µ‚Ä‚¢‚é‚©
 };
 
 
@@ -47,6 +55,8 @@ void InitPlayer(void);
 void UninitPlayer(void);
 void UpdatePlayer(void);
 void DrawPlayer(void);
+
+void Attack(void);
 
 //PLAYER* GetPlayer() {
 //	return &g_Player[0];

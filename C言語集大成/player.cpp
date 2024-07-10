@@ -12,6 +12,7 @@
 #include "player.h"
 #include "field.h"
 #include "arrow.h"
+#include "enemy.h"
 
 /*******************************************************************************
 * マクロ定義
@@ -80,11 +81,13 @@ void InitPlayer(void)
 
 	playerMoveSpeed = 4;
 
-	playerActionSpeed = 5;
+	playerActionSpeed = 4;
 
-	g_Player[0].arrownum = 10;
+	g_Player[0].arrownum = 100;
 
 	g_Player[0].arrowIsOut = 0;
+
+	g_Player[0].isAttack = false;
 }
 
 
@@ -154,6 +157,8 @@ void UpdatePlayer(void)
 
 			//攻撃
 			if (key_J < 0) {
+				Attack();
+
 
 			}
 
@@ -265,16 +270,69 @@ void UpdatePlayer(void)
 void DrawPlayer(void)
 {
 
-	for (int i = 0; i < PLAYER_MAX; i++) {
 
-		if (g_Player[0].hp <= 0) {
-			continue;
-		}//０以下ならスキップ
 
-		SetField(g_Player[i].y, g_Player[i].x, div_player);
+	if (g_Player[0].hp > 0) {
+		SetField(g_Player[0].y, g_Player[0].x, div_player);
+	}//０以下ならスキップ
+
+	if (g_Player[0].isAttack == TRUE) {
+
+		SetField(g_Player[0].attack_y1, g_Player[0].attack_x1, '+');
+		SetField(g_Player[0].attack_y2, g_Player[0].attack_x2, '+');
+		g_Player[0].isAttack = FALSE;
 	}
+
+
+
+
 	// プレイヤーをMAPの指定座標へ書き込む
 
+}
+
+void Attack() {
+	g_Player[0].isAttack = true;
+
+	switch (g_Player[0].flag)
+	{
+	case 0:
+		g_Player[0].attack_x1 = g_Player[0].x + 1;
+		g_Player[0].attack_x2 = g_Player[0].x + 2;
+		g_Player[0].attack_y1 = g_Player[0].y;
+		g_Player[0].attack_y2 = g_Player[0].y;
+
+		break;
+	case 1:
+		g_Player[0].attack_x1 = g_Player[0].x;
+		g_Player[0].attack_x2 = g_Player[0].x;
+		g_Player[0].attack_y1 = g_Player[0].y - 1;
+		g_Player[0].attack_y2 = g_Player[0].y - 2;
+
+		break;
+	case 2:
+		g_Player[0].attack_x1 = g_Player[0].x - 1;
+		g_Player[0].attack_x2 = g_Player[0].x - 2;
+		g_Player[0].attack_y1 = g_Player[0].y;
+		g_Player[0].attack_y2 = g_Player[0].y;
+
+		break;
+	case 3:
+		g_Player[0].attack_x1 = g_Player[0].x;
+		g_Player[0].attack_x2 = g_Player[0].x;
+		g_Player[0].attack_y1 = g_Player[0].y + 1;
+		g_Player[0].attack_y2 = g_Player[0].y + 2;
+
+		break;
+
+	default:
+		break;
+	}
+
+	for (int i = 0; i < ENEMY_MAX; i++) {
+		if ((g_Enemy[i].x == g_Player[0].attack_x1 && g_Enemy[i].y == g_Player[0].attack_y1) || (g_Enemy[i].x == g_Player[0].attack_x2 && g_Enemy[i].y == g_Player[0].attack_y2)) {
+			g_Enemy[i].alive = FALSE;
+		}
+	}
 }
 
 

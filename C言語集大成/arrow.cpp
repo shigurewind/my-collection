@@ -45,6 +45,11 @@ void UpdateArrow() {
 				break;
 			case 4:
 				arrow[i].use = false;
+				for (int j = 0; j < ENEMY_MAX; j++) {
+					if (g_Enemy[j].alive == true && g_Enemy[j].y == arrow[i].y && g_Enemy[j].x == arrow[i].x) {
+						g_Enemy[j].alive = false;
+					}
+				}
 				break;
 			}
 		}
