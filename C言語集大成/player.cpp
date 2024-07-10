@@ -75,7 +75,9 @@ void InitPlayer(void)
 	//‰Šú‰»
 	g_Player[0].y = 2;
 	g_Player[0].x = 2;
-	g_Player[0].hp = 100;
+	g_Player[0].hp = 3;
+	g_Player[0].hpMax = 5;
+
 
 	g_Player[0].flag = 0;
 
@@ -254,7 +256,16 @@ void UpdatePlayer(void)
 		g_Player[0].y = g_Player[0].old_y;
 		g_Player[0].x = g_Player[0].old_x;
 		break;
-	case 2://“–‚½‚è”»’è
+	case 4://“G‚É“–‚½‚è”»’è
+		g_Player[0].hp -= 1;
+		for (int i = 0; i < ENEMY_MAX; i++) {
+			if (g_Enemy[i].x == g_Player[0].x && g_Enemy[i].y == g_Player[0].y && g_Enemy[i].alive == true) {
+				g_Enemy[i].alive = false;
+			}
+		}
+		g_Player[0].y = g_Player[0].old_y;
+		g_Player[0].x = g_Player[0].old_x;
+
 
 		break;
 

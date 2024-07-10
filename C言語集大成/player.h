@@ -29,6 +29,8 @@ struct PLAYER
 	int old_y;			// ˆê•à‘O‚ÌYÀ•W
 
 	int hp;             //¶–½—Í
+	int hpMax;          //Å‘å¶–½—Í
+
 	int flag;           //•ûŒü 0:‰E  1:ã  2:¶  3:‰º
 
 	int arrownum;       //‚Á‚Ä‚¢‚é–î‚Ì”

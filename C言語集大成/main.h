@@ -34,8 +34,9 @@
 *******************************************************************************/
 
 enum {
-	GAME_TITLE,
+	GAME_TITLE,//Menu
 	GAME_FIELD, //FieldÅ@mode
+	GAME_STORY,//Story mode
 
 
 	GAME_END,

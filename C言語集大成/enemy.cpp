@@ -11,6 +11,7 @@
 #include "main.h"
 #include "enemy.h"
 #include "field.h"
+#include "player.h"
 
 /*******************************************************************************
 * É}ÉNÉçíËã`
@@ -57,7 +58,7 @@ void InitEnemy(void)
 	g_Enemy[2].y = 6;
 	g_Enemy[2].x = 20;
 
-	enemySpeed = 8;
+	enemySpeed = 20;
 }
 
 
@@ -84,7 +85,7 @@ void UpdateEnemy(void)
 
 			//std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
-			int dir = GetRand(0, 5);
+			int dir = GetRand(0, 3);
 
 
 			switch (dir)
@@ -116,8 +117,11 @@ void UpdateEnemy(void)
 				g_Enemy[i].y = g_Enemy[i].old_y;
 				g_Enemy[i].x = g_Enemy[i].old_x;
 				break;
-			case 3:
-				printf("Ç‘Ç¬Ç©ÇËÇ‹ÇµÇΩ");
+			case 2:
+				g_Enemy[i].y = g_Enemy[i].old_y;
+				g_Enemy[i].x = g_Enemy[i].old_x;
+				g_Enemy[i].alive = false;
+				g_Player[0].hp -= 1;
 				break;
 
 

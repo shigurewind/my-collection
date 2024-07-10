@@ -363,6 +363,7 @@ int CheckField(int y, int x)
 
 
 
+
 	default:
 		break;
 	}

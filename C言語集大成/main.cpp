@@ -148,6 +148,14 @@ void Update(void)
 
 		break;
 
+	case GAME_STORY:
+
+		break;
+
+	case GAME_END:
+
+		break;
+
 
 		// 本来はここへ他のゲームモードを追加する
 		// 例えば、フィールドとかバトルとか、エンディングとか、、、

@@ -12,3 +12,7 @@ void DrawUI(void);
 void SetUI(int y, int x, char data);
 
 void SetMessage(int m);//ｍはメッセージの種類
+
+void updateHP();
+
+void updateArrowNum();
