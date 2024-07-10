@@ -21,9 +21,9 @@ char UI_org[DISP_H][DISP_W + 1] = {
 	"                                                  |                             ",
 	"                                                  |                             ",
 	"                                                  |                             ",
-	"--------------------------------------------------|                             ",
-	"                                                  |                             ",
-	"                                                  |                             ",
+	"--------------------------------------------------------------------------------",
+	"           Use WASD to move    J:Attack    K:Shoot    L:Heal                    ",
+	"                                                                                ",
 	"                                                                                ",
 	"                                                                                ",
 	"                                                                                ",
@@ -85,5 +85,9 @@ void DrawUI() {
 void SetUI(int y, int x, char data)
 {
 	UI[y][x] = data;
+}
+
+void SetMessage(int m) {
+
 }
 

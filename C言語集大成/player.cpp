@@ -329,9 +329,12 @@ void Attack() {
 	}
 
 	for (int i = 0; i < ENEMY_MAX; i++) {
-		if ((g_Enemy[i].x == g_Player[0].attack_x1 && g_Enemy[i].y == g_Player[0].attack_y1) || (g_Enemy[i].x == g_Player[0].attack_x2 && g_Enemy[i].y == g_Player[0].attack_y2)) {
-			g_Enemy[i].alive = FALSE;
+		if (g_Enemy[i].alive == TRUE) {
+			if ((g_Enemy[i].x == g_Player[0].attack_x1 && g_Enemy[i].y == g_Player[0].attack_y1) || (g_Enemy[i].x == g_Player[0].attack_x2 && g_Enemy[i].y == g_Player[0].attack_y2)) {
+				g_Enemy[i].alive = FALSE;
+			}
 		}
+
 	}
 }
 
