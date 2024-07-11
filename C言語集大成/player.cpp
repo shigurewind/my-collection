@@ -36,8 +36,11 @@
 PLAYER g_Player[PLAYER_MAX];
 
 int playerMoveSpeed;//player移動時間間隔
-int playerActionSpeed;//player動作時間間隔
+//int playerActionSpeed;//player動作時間間隔
 
+bool jPressed = false;
+bool kPressed = false;
+bool lPressed = false;
 
 
 //プレイヤーの方向
@@ -83,9 +86,9 @@ void InitPlayer(void)
 
 	playerMoveSpeed = 4;
 
-	playerActionSpeed = 4;
+	//playerActionSpeed = 4;
 
-	g_Player[0].arrownum = 100;
+	g_Player[0].arrownum = 5;
 
 	g_Player[0].arrowIsOut = 0;
 
@@ -155,18 +158,22 @@ void UpdatePlayer(void)
 		}
 
 		//動作
-		if (interval % playerActionSpeed == 0) {
+
+
 
 			//攻撃
-			if (key_J < 0) {
+		if (key_J < 0) {
+			if (!jPressed) {
+				jPressed = true;
 				Attack();
-
-
 			}
+		}
 
-			//shoot
-			if (key_K < 0) {
-
+		//shoot
+		if (key_K < 0) {
+			if (!kPressed)
+			{
+				kPressed = true;
 				if (g_Player[0].arrownum > 0) {
 					SetArrow(g_Player[0].y, g_Player[0].x, g_Player[0].arrowIsOut);
 					g_Player[0].arrowIsOut++;
@@ -175,75 +182,33 @@ void UpdatePlayer(void)
 				if (g_Player[0].arrowIsOut > 20) {
 					g_Player[0].arrowIsOut = 0;
 				}
-
 			}
 
-			//heal
-			if (key_L < 0) {
-
-			}
 		}
 
+		//heal
+		if (key_L < 0) {
+			if (!lPressed) {
+				lPressed = true;
+
+			}
+
+		}
 
 	}
 
-	//前の移動処理
-	//リアルタイム処理
-	//if (_kbhit() == 0)
-	//{
-	//	// ここに少しウェイト入れるとちらつきが抑えられるかも？
-	//	std::this_thread::sleep_for(std::chrono::milliseconds(200));
-	//	return;
-	//}
+	//ボタンを外したか
+	if (key_J >= 0) {
+		jPressed = false;
+	}
+	if (key_K >= 0) {
+		kPressed = false;
+	}
+	if (key_L >= 0) {
+		lPressed = false;
+	}
+	//Sleep(3);
 
-	//// キー入力処理
-	//int key = _getch();
-	//if ((key == 0) || (key == 224))	// 特殊Keyならもう１度取得する
-	//{
-	//	key = _getch();
-	//}
-
-	//// 押されたkeyの方向へ移動させる
-	//switch (key)
-	//{
-	//case 'a':
-	//case 0x4b:	// ←
-	//	g_Player[0].x -= 1;
-	//	div_player = div_p[2];
-	//	break;
-
-	//case 'd':
-	//case 0x4d:	// →
-	//	g_Player[0].x += 1;
-	//	div_player = div_p[0];
-	//	break;
-
-	//case 'w':
-	//case 0x48:	// ↑
-	//	g_Player[0].y -= 1;
-	//	div_player = div_p[1];
-	//	break;
-
-	//case 's':
-	//case 0x50:	// ↓
-	//	g_Player[0].y += 1;
-	//	div_player = div_p[3];
-	//	break;
-
-	//case'j':
-	//	//打つ
-	//	break;
-	//case'k':
-	//	//シュート
-	//	break;
-	//case'l':
-	//	//回復
-	//	break;
-
-
-	//default:
-	//	break;
-	//}
 
 	// MAPとの当たり判定処理
 	// 
@@ -257,9 +222,10 @@ void UpdatePlayer(void)
 		g_Player[0].x = g_Player[0].old_x;
 		break;
 	case 4://敵に当たり判定
-		g_Player[0].hp -= 1;
+
 		for (int i = 0; i < ENEMY_MAX; i++) {
 			if (g_Enemy[i].x == g_Player[0].x && g_Enemy[i].y == g_Player[0].y && g_Enemy[i].alive == true) {
+				g_Player[0].hp -= 1;
 				g_Enemy[i].alive = false;
 			}
 		}

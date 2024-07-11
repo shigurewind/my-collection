@@ -118,10 +118,13 @@ void UpdateEnemy(void)
 				g_Enemy[i].x = g_Enemy[i].old_x;
 				break;
 			case 2:
-				g_Enemy[i].y = g_Enemy[i].old_y;
-				g_Enemy[i].x = g_Enemy[i].old_x;
-				g_Enemy[i].alive = false;
-				g_Player[0].hp -= 1;
+				if (g_Enemy[i].alive == true) {
+					g_Enemy[i].y = g_Enemy[i].old_y;
+					g_Enemy[i].x = g_Enemy[i].old_x;
+					g_Enemy[i].alive = false;
+					g_Player[0].hp -= 1;
+				}
+
 				break;
 
 
