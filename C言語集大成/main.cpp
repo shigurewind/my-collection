@@ -15,6 +15,7 @@
 #include "enemy.h"
 #include "arrow.h"
 #include "ui.h"
+#include "box.h"
 
 /*******************************************************************************
 * É}ÉNÉçíËã`
@@ -99,6 +100,9 @@ void Init(void)
 
 	InitEnemy();
 
+	InitBox();
+
+
 }
 
 
@@ -137,6 +141,7 @@ void Update(void)
 		UpdatePlayer();
 		UpdateEnemy();
 		UpdateArrow();
+		UpdateBox();
 		UpdateField();
 		UpdateUI();
 
@@ -181,6 +186,8 @@ void Draw(void)
 		DrawPlayer();
 		DrawEnemy();
 		DrawArrow();
+
+		DrawBox();
 
 		DrawField();
 

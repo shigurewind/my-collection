@@ -1,5 +1,8 @@
 #pragma once
 
+#define Message_h (10)
+#define Message_w (50)
+
 
 
 
@@ -12,7 +15,9 @@ void DrawUI(void);
 void SetUI(int y, int x, char data);
 
 void SetMessage(int m);//ｍはメッセージの種類
+void ClearMessage(void);
 
 void updateHP();
 
 void updateArrowNum();
+

@@ -358,6 +358,10 @@ int CheckField(int y, int x)
 	case'E':
 		ans = 4;//“G
 		break;
+	case'#':
+		ans = 5;//ƒh[ƒA
+		break;
+
 
 
 
