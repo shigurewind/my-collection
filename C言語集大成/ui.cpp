@@ -8,14 +8,14 @@ bool isMessageMode;
 
 
 char UI_org[DISP_H][DISP_W + 1] = {
-	"                                                  |                             ",
+	"                                                  | STATUS                      ",
 	"                                                  |  HP:                        ",
 	"                                                  |  Arrow:                     ",
 	"                                                  |                             ",
+	"                                                  |  Heart Fragments:           ",
 	"                                                  |                             ",
 	"                                                  |                             ",
-	"                                                  |                             ",
-	"                                                  |                             ",
+	"                                                  |-----------------------------",
 	"                                                  |                             ",
 	"                                                  |                             ",
 	"                                                  |                             ",
@@ -73,6 +73,7 @@ void UpdateUI() {
 
 	updateArrowNum();
 	updateHP();
+	updateHeartFragments();
 
 
 	memcpy(UI, UI_org, sizeof(UI));
@@ -128,9 +129,28 @@ void updateArrowNum()
 }
 
 //LifeFragments表示
-void updateLifeFragments()
+void updateHeartFragments()
 {
 
+
+	char HeartFraDisplay[9] = { "        " };
+
+	for (int i = 0; i < g_Player[0].heartFraNum; i++) {
+		HeartFraDisplay[i * 2] = 'H';
+		if (i == g_Player[0].heartFraNum - 1)continue;
+		HeartFraDisplay[i * 2 + 1] = '_';
+	}
+	memcpy(&UI_org[5][54], HeartFraDisplay, 8);
+
+
+}
+
+void checkHeartFra() {
+	if (g_Player[0].heartFraNum == 4) {
+		g_Player[0].heartFraNum = 0;
+		g_Player[0].hpMax += 1;
+		g_Player[0].hp = g_Player[0].hpMax;
+	}
 }
 
 char MessageBar_org[Message_h][Message_w + 1] = {
@@ -142,7 +162,10 @@ char MessageBar_org[Message_h][Message_w + 1] = {
 	"|                                                |",
 	"|                                                |",
 	"|                                                |",
-	"|   スペース(Space)キーを押すと進む  |",
+	"|                                                |",
+	"|                                                |",
+	"|           Press [Space] to continue            |",
+	"|                                                |",
 	"==================================================",
 
 };
@@ -158,17 +181,22 @@ char MessageBar[Message_h][Message_w + 1] = {
 	"                                                  ",
 	"                                                  ",
 	"                                                  ",
+	"                                                  ",
+	"                                                  ",
+	"                                                  ",
 };
 
-void UpdateMessage()
+void DrawMessage()
 {
 	if (isMessageMode) {
 		memcpy(MessageBar, MessageBar_org, sizeof(MessageBar));
+
+		for (int i = 0; i < Message_h; i++)
+		{
+			memcpy(&UI[i + 5][15], &MessageBar[i][0], Message_w);
+		}
 	}
-	for (int i = 0; i < Message_h; i++)
-	{
-		memcpy(&UI[i + 5][15], &MessageBar[i][0], Message_w);
-	}
+
 
 }
 
@@ -179,15 +207,37 @@ void SetMessage(int type) {
 	switch (type)
 	{
 	case 0:
-		char comment[] = "矢5本を見つけた！";
+	{
+		char comment[] = "Arrow 5 pieces get!";
+		memcpy(&MessageBar_org[4][15], comment, 19);
+
+		//Messageを入力する
 
 		break;
-		/*case 1:
-			break;
-		case 2:
-			break;
-		case 3:
-			break;*/
+	}
+	case 1:
+	{
+		char comment1[] = "One piece of heart get!";
+		memcpy(&MessageBar_org[4][13], comment1, 23);
+
+		if (g_Player[0].heartFraNum == 4) {
+			char comment2[] = "4 pieces collected! Maximum life increased!";
+			memcpy(&MessageBar_org[6][3], comment2, 43);
+		}
+		else {
+			char comment2[] = "4 pieces to increase your maxinum life!";
+			memcpy(&MessageBar_org[6][5], comment2, 39);
+		}
+
+		checkHeartFra();
+
+		break;
+	}
+
+	/*case 2:
+		break;
+	case 3:
+		break;*/
 	}
 }
 
@@ -197,7 +247,7 @@ void ClearMessage() {
 	{
 		for (int j = 0; j < Message_w; j++)
 		{
-			UI[i][j] = ' ';
+			MessageBar[i][j] = ' ';
 		}
 
 	}

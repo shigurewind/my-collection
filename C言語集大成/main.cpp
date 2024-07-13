@@ -143,7 +143,11 @@ void Update(void)
 		UpdateArrow();
 		UpdateBox();
 		UpdateField();
+
+
 		UpdateUI();
+
+
 
 
 
@@ -190,6 +194,8 @@ void Draw(void)
 		DrawBox();
 
 		DrawField();
+
+		DrawMessage();
 
 		DrawUI();
 

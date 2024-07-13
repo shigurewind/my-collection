@@ -79,7 +79,7 @@ void InitPlayer(void)
 	g_Player[0].y = 2;
 	g_Player[0].x = 2;
 	g_Player[0].hp = 3;
-	g_Player[0].hpMax = 5;
+	g_Player[0].hpMax = 3;
 
 
 	g_Player[0].flag = 0;
@@ -93,6 +93,8 @@ void InitPlayer(void)
 	g_Player[0].arrowIsOut = 0;
 
 	g_Player[0].isAttack = false;
+
+	g_Player[0].heartFraNum = 3;
 }
 
 

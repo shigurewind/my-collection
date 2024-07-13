@@ -15,8 +15,45 @@ void InitBox() {
 	box[0].y = 2;
 	box[0].x = 5;
 
+	box[1].type = 1;
+	box[1].y = 4;
+	box[1].x = 7;
+
+	/*box[2].type = 0;
+	box[2].y = 2;
+	box[2].x = 5;
+
+	box[3].type = 0;
+	box[3].y = 2;
+	box[3].x = 5;
+
+	box[0].type = 0;
+	box[0].y = 2;
+	box[0].x = 5;
+
+	box[0].type = 0;
+	box[0].y = 2;
+	box[0].x = 5;
+
+	box[0].type = 0;
+	box[0].y = 2;
+	box[0].x = 5;
+
+	box[0].type = 0;
+	box[0].y = 2;
+	box[0].x = 5;
+
+	box[0].type = 0;
+	box[0].y = 2;
+	box[0].x = 5;
+
+	box[10].type = 0;
+	box[10].y = 2;
+	box[10].x = 5;*/
+
 }
 
+//BOX“–‚½‚è”»’è
 void UpdateBox() {
 	for (int i = 0; i < BOX_MAX; i++) {
 		if (box[i].y == g_Player[0].y && box[i].x == g_Player[0].x && box[i].use == true) {
@@ -27,8 +64,18 @@ void UpdateBox() {
 				SetMessage(0);
 				break;
 			case 1:
+				g_Player[0].heartFraNum += 1;
+				SetMessage(1);
+
 				break;
 			case 2:
+
+				SetMessage(2);
+
+				break;
+			case 3:
+
+
 				break;
 
 			}

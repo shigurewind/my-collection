@@ -44,6 +44,14 @@ struct PLAYER
 	int attack_y2;
 
 	BOOL isAttack;      //UŒ‚‚µ‚Ä‚¢‚é‚©
+
+	int healNum;   //–ò‚Ì”
+
+	int heartFraNum;  //¶–½”j•Ğ‚Ì”
+
+	int keyNum;   //Œ®‚Ì”
+
+
 };
 
 
