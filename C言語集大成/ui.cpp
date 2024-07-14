@@ -25,7 +25,7 @@ char UI_org[DISP_H][DISP_W + 1] = {
 	"                                                  |                             ",
 	"                                                  |                             ",
 	"--------------------------------------------------------------------------------",
-	"           Use WASD to move    J:Attack    K:Shoot    L:Heal                    ",
+	"           Use WASD to move    J:Attack    K:Shoot    L:Hook                    ",
 	"                                                                                ",
 	"                                                                                ",
 	"                                                                                ",
@@ -171,19 +171,19 @@ char MessageBar_org[Message_h][Message_w + 1] = {
 };
 
 char MessageBar[Message_h][Message_w + 1] = {
-	"                                                  ",
-	"                                                  ",
-	"                                                  ",
-	"                                                  ",
-	"                                                  ",
-	"                                                  ",
-	"                                                  ",
-	"                                                  ",
-	"                                                  ",
-	"                                                  ",
-	"                                                  ",
-	"                                                  ",
-	"                                                  ",
+	"==================================================",
+	"|                                                |",
+	"|                                                |",
+	"|                                                |",
+	"|                                                |",
+	"|                                                |",
+	"|                                                |",
+	"|                                                |",
+	"|                                                |",
+	"|                                                |",
+	"|           Press [Space] to continue            |",
+	"|                                                |",
+	"==================================================",
 };
 
 void DrawMessage()
@@ -243,11 +243,13 @@ void SetMessage(int type) {
 
 void ClearMessage() {
 	isMessageMode = false;
-	for (int i = 0; i < Message_h; i++)
+
+	//Message‚É“Á’è‚ÈêŠ‚ðÁ‚·
+	for (int i = 1; i < Message_h - 3; i++)
 	{
-		for (int j = 0; j < Message_w; j++)
+		for (int j = 1; j < Message_w - 1; j++)
 		{
-			MessageBar[i][j] = ' ';
+			MessageBar_org[i][j] = ' ';
 		}
 
 	}

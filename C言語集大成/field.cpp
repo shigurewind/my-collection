@@ -343,6 +343,7 @@ int CheckField(int y, int x)
 	switch (data)
 	{
 	case '*':
+	case '@':
 		ans = 1; // 壁 その場所はNGだったので1をセットする
 		break;
 	case 'V':
@@ -361,6 +362,10 @@ int CheckField(int y, int x)
 	case'#':
 		ans = 5;//ドーア
 		break;
+	case'B':
+		ans = 6;//BOX
+		break;
+
 
 
 

@@ -113,7 +113,9 @@ void UpdateEnemy(void)
 
 			switch (answer)
 			{
-			case 1:	// ˆÚ“®‚µ‚Ä‚ÍNG‚ÈêŠ‚¾‚Á‚½‚Ì‚Å‘O‚ÌêŠ‚Ö–ß‚·
+			case 1:
+			case 5:
+			case 6:// ˆÚ“®‚µ‚Ä‚ÍNG‚ÈêŠ‚¾‚Á‚½‚Ì‚Å‘O‚ÌêŠ‚Ö–ß‚·
 				g_Enemy[i].y = g_Enemy[i].old_y;
 				g_Enemy[i].x = g_Enemy[i].old_x;
 				break;

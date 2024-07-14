@@ -13,6 +13,8 @@
 #include "field.h"
 #include "arrow.h"
 #include "enemy.h"
+#include "hook.h"
+#include "stone.h"
 
 /*******************************************************************************
 * ƒ}ƒNƒ’è‹`
@@ -177,7 +179,7 @@ void UpdatePlayer(void)
 			{
 				kPressed = true;
 				if (g_Player[0].arrownum > 0) {
-					SetArrow(g_Player[0].y, g_Player[0].x, g_Player[0].arrowIsOut);
+					SetArrow(g_Player[0].y, g_Player[0].x, g_Player[0].arrowIsOut, g_Player[0].flag);
 					g_Player[0].arrowIsOut++;
 					g_Player[0].arrownum--;
 				}
@@ -188,10 +190,11 @@ void UpdatePlayer(void)
 
 		}
 
-		//heal
+		//‚©‚¬’Ü
 		if (key_L < 0) {
 			if (!lPressed) {
 				lPressed = true;
+				UseHook(g_Player[0].y, g_Player[0].x, g_Player[0].flag);
 
 			}
 
@@ -255,6 +258,7 @@ void DrawPlayer(void)
 		SetField(g_Player[0].y, g_Player[0].x, div_player);
 	}//‚OˆÈ‰º‚È‚çƒXƒLƒbƒv
 
+	//UŒ‚•\Ž¦
 	if (g_Player[0].isAttack == TRUE) {
 
 		SetField(g_Player[0].attack_y1, g_Player[0].attack_x1, '+');
@@ -269,7 +273,8 @@ void DrawPlayer(void)
 
 }
 
-void Attack() {
+void Attack()
+{
 	g_Player[0].isAttack = true;
 
 	switch (g_Player[0].flag)
@@ -307,6 +312,11 @@ void Attack() {
 		break;
 	}
 
+	//Î‚ð”j‰ó
+	checkStone(g_Player[0].attack_y1, g_Player[0].attack_x1);
+	checkStone(g_Player[0].attack_y2, g_Player[0].attack_x2);
+
+	//enemy‚ð“|‚·
 	for (int i = 0; i < ENEMY_MAX; i++) {
 		if (g_Enemy[i].alive == TRUE) {
 			if ((g_Enemy[i].x == g_Player[0].attack_x1 && g_Enemy[i].y == g_Player[0].attack_y1) || (g_Enemy[i].x == g_Player[0].attack_x2 && g_Enemy[i].y == g_Player[0].attack_y2)) {
@@ -316,6 +326,8 @@ void Attack() {
 
 	}
 }
+
+
 
 
 

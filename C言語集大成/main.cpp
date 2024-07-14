@@ -16,6 +16,8 @@
 #include "arrow.h"
 #include "ui.h"
 #include "box.h"
+#include "hook.h"
+#include "stone.h"
 
 /*******************************************************************************
 * É}ÉNÉçíËã`
@@ -102,6 +104,8 @@ void Init(void)
 
 	InitBox();
 
+	InitStone();
+
 
 }
 
@@ -139,6 +143,7 @@ void Update(void)
 	case GAME_FIELD:
 
 		UpdatePlayer();
+		UpdateHook();
 		UpdateEnemy();
 		UpdateArrow();
 		UpdateBox();
@@ -188,10 +193,13 @@ void Draw(void)
 
 	case GAME_FIELD:
 		DrawPlayer();
+		DrawHook();
 		DrawEnemy();
 		DrawArrow();
 
 		DrawBox();
+
+		DrawStone();
 
 		DrawField();
 

@@ -131,8 +131,10 @@
     <ClCompile Include="box.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="field.cpp" />
+    <ClCompile Include="hook.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="stone.cpp" />
     <ClCompile Include="title.cpp" />
     <ClCompile Include="ui.cpp" />
   </ItemGroup>
@@ -141,8 +143,10 @@
     <ClInclude Include="box.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="field.h" />
+    <ClInclude Include="hook.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="stone.h" />
     <ClInclude Include="title.h" />
     <ClInclude Include="ui.h" />
   </ItemGroup>

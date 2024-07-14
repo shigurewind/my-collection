@@ -33,4 +33,4 @@ extern struct ARROW arrow[ARROW_MAX];
 void UpdateArrow(void);
 void DrawArrow(void);
 
-void SetArrow(int x, int y, int n);
+void SetArrow(int x, int y, int n, int f);

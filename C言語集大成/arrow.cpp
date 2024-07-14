@@ -70,17 +70,17 @@ void DrawArrow() {
 }
 
 //Player‚ÌˆÊ’u‚©‚ç”­ŽËA‘æ‚Ž”Ô–î
-void SetArrow(int y, int x, int n) {
+void SetArrow(int y, int x, int n, int f) {
 
 
-	switch (g_Player->flag)
+	switch (f)
 	{
 	case 0:
 		//‰E‚É”­ŽË
 		arrow[n].use = true;
 		arrow[n].flag = 0;
-		arrow[n].x = g_Player->x + 1;
-		arrow[n].y = g_Player->y;
+		arrow[n].x = x + 1;
+		arrow[n].y = y;
 		arrow[n].style = arrowStyle[0];
 
 		break;
@@ -88,8 +88,8 @@ void SetArrow(int y, int x, int n) {
 		//ã‚É”­ŽË
 		arrow[n].use = true;
 		arrow[n].flag = 1;
-		arrow[n].x = g_Player->x;
-		arrow[n].y = g_Player->y - 1;
+		arrow[n].x = x;
+		arrow[n].y = y - 1;
 		arrow[n].style = arrowStyle[1];
 
 		break;
@@ -97,8 +97,8 @@ void SetArrow(int y, int x, int n) {
 		//¶‚É”­ŽË
 		arrow[n].use = true;
 		arrow[n].flag = 2;
-		arrow[n].x = g_Player->x - 1;
-		arrow[n].y = g_Player->y;
+		arrow[n].x = x - 1;
+		arrow[n].y = y;
 		arrow[n].style = arrowStyle[0];
 
 		break;
@@ -106,8 +106,8 @@ void SetArrow(int y, int x, int n) {
 		//‰º‚É”­ŽË
 		arrow[n].use = true;
 		arrow[n].flag = 3;
-		arrow[n].x = g_Player->x;
-		arrow[n].y = g_Player->y + 1;
+		arrow[n].x = x;
+		arrow[n].y = y + 1;
 		arrow[n].style = arrowStyle[1];
 
 		break;

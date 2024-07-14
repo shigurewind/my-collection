@@ -51,6 +51,8 @@ struct PLAYER
 
 	int keyNum;   //Œ®‚Ì”
 
+	BOOL isHook;  //‚©‚¬’Üg‚Á‚Ä‚é‚©
+
 
 };
 
