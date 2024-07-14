@@ -24,3 +24,5 @@ void updateArrowNum();
 
 void updateHeartFragments();
 
+void updateKeys();
+

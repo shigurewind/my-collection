@@ -4,7 +4,7 @@
 #include "player.h"
 #include "field.h"
 
-#define HOOKMAX (5)
+#define HOOKMAX (7)
 
 
 

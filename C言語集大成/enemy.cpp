@@ -58,7 +58,7 @@ void InitEnemy(void)
 	g_Enemy[2].y = 6;
 	g_Enemy[2].x = 20;
 
-	enemySpeed = 20;
+	enemySpeed = 30;
 }
 
 

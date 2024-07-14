@@ -1,4 +1,5 @@
 #include "hook.h"
+#include "enemy.h"
 
 int hookFlag;
 int hooknum;
@@ -45,8 +46,10 @@ void UpdateHook() {
 			break;
 		}
 
-		if (CheckField(hook[hooknum].y, hook[hooknum].x) == 1) {
-			if (hooknum == 0) {
+		if (CheckField(hook[hooknum].y, hook[hooknum].x) == 1 || CheckField(hook[hooknum].y, hook[hooknum].x) == 5 || CheckField(hook[hooknum].y, hook[hooknum].x) == 6)//•Ç‚Æ‚©‚ ‚½‚é
+		{
+			if (hooknum == 0)
+			{
 				g_Player[0].isHook = FALSE;
 			}
 			else
@@ -57,13 +60,32 @@ void UpdateHook() {
 			}
 
 		}
-		else {
+		else if (CheckField(hook[hooknum].y, hook[hooknum].x) == 4)//“G‚ð‚ ‚½‚é
+		{
+			g_Player[0].isHook = FALSE;
+			if (hooknum > 1)
+			{
+				for (int i = 0; i < ENEMY_MAX; i++)
+				{
+					if (g_Enemy[i].y == hook[hooknum].y && g_Enemy[i].x == hook[hooknum].x) {
+						g_Enemy[i].y = hook[1].y;
+						g_Enemy[i].x = hook[1].x;
+
+					}
+				}
+			}
+			/*else {
+				g_Player[0].isHook = FALSE;
+			}*/
+		}
+		else
+		{
 			hook[hooknum].use = TRUE;
 		}
 
 		hooknum++;
 
-		if (hooknum > 4) {
+		if (hooknum == HOOKMAX) {
 			hooknum = 0;
 			g_Player[0].isHook = FALSE;
 		}

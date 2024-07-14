@@ -17,7 +17,7 @@ char UI_org[DISP_H][DISP_W + 1] = {
 	"                                                  |                             ",
 	"                                                  |-----------------------------",
 	"                                                  |                             ",
-	"                                                  |                             ",
+	"                                                  |  KEY:                       ",
 	"                                                  |                             ",
 	"                                                  |                             ",
 	"                                                  |                             ",
@@ -74,6 +74,7 @@ void UpdateUI() {
 	updateArrowNum();
 	updateHP();
 	updateHeartFragments();
+	updateKeys();
 
 
 	memcpy(UI, UI_org, sizeof(UI));
@@ -108,7 +109,16 @@ void SetUI(int y, int x, char data)
 	UI[y][x] = data;
 }
 
-
+void updateKeys() {
+	char Keydisplay[10] = { ' ' };
+	for (int i = 0; i < g_Player[0].keyNum; i++)
+	{
+		Keydisplay[i * 2] = 'Y';
+		if (i == g_Player[0].keyNum - 1)continue;
+		Keydisplay[i * 2 + 1] = ' ';
+	}
+	memcpy(&UI_org[9][58], Keydisplay, 10);
+}
 
 void updateHP()
 {
@@ -116,7 +126,7 @@ void updateHP()
 	for (int i = 0; i < g_Player[0].hp; i++) {
 		HPdisplay[i * 2] = '0';
 		if (i == g_Player[0].hp - 1) continue;
-		HPdisplay[i * 2 + 1] = '_';
+		HPdisplay[i * 2 + 1] = ' ';
 	}
 	memcpy(&UI_org[1][57], HPdisplay, g_Player[0].hp * 2);
 }
@@ -138,7 +148,7 @@ void updateHeartFragments()
 	for (int i = 0; i < g_Player[0].heartFraNum; i++) {
 		HeartFraDisplay[i * 2] = 'H';
 		if (i == g_Player[0].heartFraNum - 1)continue;
-		HeartFraDisplay[i * 2 + 1] = '_';
+		HeartFraDisplay[i * 2 + 1] = ' ';
 	}
 	memcpy(&UI_org[5][54], HeartFraDisplay, 8);
 
@@ -207,6 +217,7 @@ void SetMessage(int type) {
 	switch (type)
 	{
 	case 0:
+		//–î‚ðGET‚ÌMessage
 	{
 		char comment[] = "Arrow 5 pieces get!";
 		memcpy(&MessageBar_org[4][15], comment, 19);
@@ -216,6 +227,7 @@ void SetMessage(int type) {
 		break;
 	}
 	case 1:
+		//S‚Ì”j•ÐGET‚ÌMessage
 	{
 		char comment1[] = "One piece of heart get!";
 		memcpy(&MessageBar_org[4][13], comment1, 23);
@@ -231,6 +243,28 @@ void SetMessage(int type) {
 
 		checkHeartFra();
 
+		break;
+	}
+	case 2:
+		//KEY‚ðGET‚ÌMessage
+	{
+		char comment1[] = "Y";
+		memcpy(&MessageBar_org[3][24], comment1, 12);
+
+		char comment2[] = "Get one key!";
+		memcpy(&MessageBar_org[5][19], comment2, 12);
+
+		char comment3[] = "You can use it to open a door(#)";
+		memcpy(&MessageBar_org[7][8], comment3, 32);
+
+		break;
+	}
+
+	case 3:
+		//DOOR‚ðŠJ‚¯‚éMessage
+	{
+		char comment[] = "Key has been used,door opened!";
+		memcpy(&MessageBar_org[4][10], comment, 30);
 		break;
 	}
 
@@ -254,6 +288,8 @@ void ClearMessage() {
 
 	}
 }
+
+
 
 
 

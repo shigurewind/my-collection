@@ -18,6 +18,7 @@
 #include "box.h"
 #include "hook.h"
 #include "stone.h"
+#include "door.h"
 
 /*******************************************************************************
 * É}ÉNÉçíËã`
@@ -105,6 +106,8 @@ void Init(void)
 	InitBox();
 
 	InitStone();
+
+	InitDoor();
 
 
 }
@@ -200,6 +203,8 @@ void Draw(void)
 		DrawBox();
 
 		DrawStone();
+
+		DrawDoor();
 
 		DrawField();
 

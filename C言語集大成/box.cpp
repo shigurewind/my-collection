@@ -19,11 +19,11 @@ void InitBox() {
 	box[1].y = 4;
 	box[1].x = 7;
 
-	/*box[2].type = 0;
+	box[2].type = 2;
 	box[2].y = 2;
-	box[2].x = 5;
+	box[2].x = 10;
 
-	box[3].type = 0;
+	/*box[3].type = 0;
 	box[3].y = 2;
 	box[3].x = 5;
 
@@ -64,12 +64,12 @@ void UpdateBox() {
 				SetMessage(0);
 				break;
 			case 1:
-				g_Player[0].heartFraNum += 1;
+				g_Player[0].heartFraNum++;
 				SetMessage(1);
 
 				break;
 			case 2:
-
+				g_Player[0].keyNum++;
 				SetMessage(2);
 
 				break;

@@ -15,6 +15,8 @@
 #include "enemy.h"
 #include "hook.h"
 #include "stone.h"
+#include "door.h"
+#include "ui.h"
 
 /*******************************************************************************
 * マクロ定義
@@ -67,15 +69,6 @@ void InitPlayer(void)
 
 	// 構造体の初期化
 
-	for (int i = 0; i < PLAYER_MAX; i++) {
-		g_Player[i].x = 0;
-		g_Player[i].y = 0;
-
-		g_Player[i].old_x = 0;
-		g_Player[i].old_y = 0;
-
-		g_Player[i].hp = 100;
-	}
 
 	//初期化
 	g_Player[0].y = 2;
@@ -97,6 +90,8 @@ void InitPlayer(void)
 	g_Player[0].isAttack = false;
 
 	g_Player[0].heartFraNum = 3;
+
+	g_Player[0].keyNum = 0;
 }
 
 
@@ -229,7 +224,7 @@ void UpdatePlayer(void)
 	case 4://敵に当たり判定
 
 		for (int i = 0; i < ENEMY_MAX; i++) {
-			if (g_Enemy[i].x == g_Player[0].x && g_Enemy[i].y == g_Player[0].y && g_Enemy[i].alive == true) {
+			if (g_Enemy[i].x == g_Player[0].x && g_Enemy[i].y == g_Player[0].y && g_Enemy[i].alive == TRUE) {
 				g_Player[0].hp -= 1;
 				g_Enemy[i].alive = false;
 			}
@@ -240,7 +235,20 @@ void UpdatePlayer(void)
 
 		break;
 
-	default:
+	case 5://DOORにあたる
+		if (g_Player[0].keyNum > 0) {
+			door[CheckDoor(g_Player[0].y, g_Player[0].x)].opened = TRUE;
+			g_Player[0].keyNum--;
+			SetMessage(3);//DOORを開けるMessage
+
+		}
+		else
+		{
+			g_Player[0].y = g_Player[0].old_y;
+			g_Player[0].x = g_Player[0].old_x;
+		}
+
+
 		break;
 	}
 

@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="arrow.cpp" />
     <ClCompile Include="box.cpp" />
+    <ClCompile Include="door.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="field.cpp" />
     <ClCompile Include="hook.cpp" />
@@ -141,6 +142,7 @@
   <ItemGroup>
     <ClInclude Include="arrow.h" />
     <ClInclude Include="box.h" />
+    <ClInclude Include="door.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="field.h" />
     <ClInclude Include="hook.h" />
