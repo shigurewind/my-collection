@@ -19,6 +19,7 @@
 #include "hook.h"
 #include "stone.h"
 #include "door.h"
+#include "menu.h"
 
 /*******************************************************************************
 * マクロ定義
@@ -39,7 +40,8 @@
 * グローバル変数
 *******************************************************************************/
 
-int g_Mode = GAME_FIELD;		// 現在動作している状態（ゲームモード）
+//最初のMode
+int g_Mode = GAME_TITLE;		// 現在動作している状態（ゲームモード）
 
 int interval = 1;
 
@@ -142,6 +144,11 @@ void Update(void)
 	case GAME_TITLE:
 		UpdateTitle();
 		break;
+	case GAME_MENU:
+		UpdateMenu();
+
+		break;
+
 
 	case GAME_FIELD:
 
@@ -165,7 +172,7 @@ void Update(void)
 
 		break;
 
-	case GAME_STORY:
+	case GAME_CLEAR:
 
 		break;
 
@@ -192,6 +199,9 @@ void Draw(void)
 	{
 	case GAME_TITLE:
 		DrawTitle();
+		break;
+	case GAME_MENU:
+		DrawMenu();
 		break;
 
 	case GAME_FIELD:

@@ -34,12 +34,17 @@
 *******************************************************************************/
 
 enum {
-	GAME_TITLE,//Menu
+	GAME_TITLE,//Title mode
+
+	GAME_MENU,//Menu mode
+
 	GAME_FIELD, //Field　mode
-	GAME_STORY,//Story mode
 
 
-	GAME_END,
+
+	GAME_END,//GAME OVER
+
+	GAME_CLEAR,//GAME CLEAR
 };
 
 #define		DISP_H		(24)	// 表示画面の縦サイズ

@@ -134,6 +134,7 @@
     <ClCompile Include="field.cpp" />
     <ClCompile Include="hook.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="stone.cpp" />
     <ClCompile Include="title.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="field.h" />
     <ClInclude Include="hook.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="stone.h" />
     <ClInclude Include="title.h" />

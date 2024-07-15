@@ -137,6 +137,33 @@ char title[DISP_H * ANIM_CNT][DISP_W] = {
 	"                        Created by Takaaki Tonooka 2024                       \n",
 };
 
+char Name[DISP_H][DISP_W] = {
+"                                                                             \n",
+"                                                                             \n",
+"                                                                             \n",
+"                                                                             \n",
+"                                                                             \n",
+"                                                                             \n",
+"                                                                             \n",
+"          _          _                          _                            \n",
+"         / `      __| | __   __   ___   _ __   | |_   _   _   _ __    ___    \n",
+"        / _ `    / _` | ` ` / /  / _ ` | '_ `  | __| | | | | | '__|  / _ `   \n",
+"       / ___ `  | (_| |  ` V /  |  __/ | | | | | |_  | |_| | | |    |  __/   \n",
+"      /_/   `_`  `__,_|   `_/    `___| |_| |_|  `__|  `__,_| |_|     `___|   \n",
+"            _             ___         _                       _              \n",
+"           (_)  _ __     |_ _|  ___  | |   __ _   _ __     __| |             \n",
+"           | | | '_ `     | |  / __| | |  / _` | | '_ `   / _` |             \n",
+"           | | | | | |    | |  {`__` | | | (_| | | | | | | (_| |             \n",
+"           |_| |_| |_|   |___| |___/ |_|  `__,_| |_| |_|  `__,_|             \n",
+"                                                                             \n",
+"                                                                             \n",
+"                                                                             \n",
+"                                                                             \n",
+"                          Created by DING FENG 2024                          \n",
+"                                                                             \n",
+"                          Press any key to continue                          \n",
+};
+
 
 int g_TitleLoopCount;			// タイトルの描画を繰り返す為のカウンター
 
@@ -167,7 +194,7 @@ void UpdateTitle(void)
 		std::rewind(stdin);
 		std::cin.get();
 
-		SetMode(GAME_FIELD);		// Fieldに移動
+		SetMode(GAME_MENU);		// Fieldに移動
 	}
 
 }
@@ -176,24 +203,44 @@ void UpdateTitle(void)
 // タイトル画面処理
 void DrawTitle(void)
 {
-	/* 画面描画処理 */
-	for (int y = 0; y < DISP_H * ANIM_CNT; y++)
-	{
-		/* 1画面分表示したら少しウェイトさせる */
-		if (y % DISP_H == 0)
-		{
-			/* ウェイト */
-			std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
-			/* 画面クリア */
-			system("cls");
-		}
+	/* アニメーションループ */
+	//for (int y = 0; y < DISP_H * ANIM_CNT; y++)
+	//{
+	//	/* 1画面分表示したら少しウェイトさせる */
+	//	if (y % DISP_H == 0)
+	//	{
+	//		/* ウェイト */
+	//		std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
+	//		/* 画面クリア */
+	//		system("cls");
+	//	}
+
+	//	// １文字ずつだと遅いから１行ずつ表示させる
+	//	std::cout << &title[y][0];
+
+	//}
+
+	/* 画面描画処理 */
+	for (int y = 0; y < DISP_H; y++)
+	{
+		/* ウェイト */
+		std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
 		// １文字ずつだと遅いから１行ずつ表示させる
-		std::cout << &title[y][0];
-
+		std::cout << &Name[y][0];
 
 	}
+
+	while (!_kbhit()) {
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+	}
+
+	system("cls");
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	SetMode(GAME_MENU);
+
 
 }
 

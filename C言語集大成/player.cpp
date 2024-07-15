@@ -106,6 +106,7 @@ void UninitPlayer(void)
 void UpdatePlayer(void)
 {
 	if (g_Player[0].hp <= 0) {
+		SetMode(GAME_END);
 		return;
 	}//0ならぬける
 
@@ -119,7 +120,7 @@ void UpdatePlayer(void)
 		key_S = GetKeyState('S'),      // S押し確認
 		key_A = GetKeyState('A'),      // A押し確認
 		key_D = GetKeyState('D'),      // D押し確認
-		key_attack = GetKeyState(' '), // Space押し確認
+		key_Space = GetKeyState(' '), // Space押し確認
 		key_J = GetKeyState('J'),
 		key_K = GetKeyState('K'),
 		key_L = GetKeyState('L');

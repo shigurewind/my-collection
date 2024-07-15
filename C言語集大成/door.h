@@ -1,7 +1,7 @@
 #pragma once
 
 
-#define DOORMAX (3)
+#define DOORMAX (4)
 
 struct DOOR
 {
