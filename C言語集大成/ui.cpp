@@ -249,7 +249,7 @@ void SetMessage(int type) {
 		//KEY‚ðGET‚ÌMessage
 	{
 		char comment1[] = "Y";
-		memcpy(&MessageBar_org[3][24], comment1, 12);
+		memcpy(&MessageBar_org[3][24], comment1, 1);
 
 		char comment2[] = "Get one key!";
 		memcpy(&MessageBar_org[5][19], comment2, 12);
@@ -267,6 +267,15 @@ void SetMessage(int type) {
 		memcpy(&MessageBar_org[4][10], comment, 30);
 		break;
 	}
+
+	case 4:
+		//River‚É—Ž‚¿‚éMessage
+	{
+		char comment[] = "Fall into the river! Be careful!";
+		memcpy(&MessageBar_org[4][9], comment, 32);
+		break;
+	}
+
 
 	/*case 2:
 		break;

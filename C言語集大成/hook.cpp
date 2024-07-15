@@ -72,6 +72,10 @@ void UpdateHook() {
 						g_Enemy[i].x = hook[1].x;
 
 					}
+					//“G‚ð‰Í‚É•ß‚Ü‚¦‚é
+					if (CheckField(g_Enemy[i].y, g_Enemy[i].x) == 7) {
+						g_Enemy[i].alive = FALSE;
+					}
 				}
 			}
 			/*else {

@@ -38,8 +38,8 @@ char field_org[FIELD_H][FIELD_W + 1] = {
 	"*                                      *                                                           *",
 	"*                                      *                                                           *",
 	"*                                      *                                                           *",
-	"*                                                                                                  *",
-	"*       *                                                                                          *",
+	"*                                 *   ~~~   *                                                     *",
+	"*       *                         *   ~~~   *                                                     *",
 	"*       *                              *                                                           *",
 	"*                    *******           *                                                           *",
 	"*                                      *                                                           *",
@@ -364,6 +364,9 @@ int CheckField(int y, int x)
 		break;
 	case'B':
 		ans = 6;//BOX
+		break;
+	case'~':
+		ans = 7;//‰Í
 		break;
 
 

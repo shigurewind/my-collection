@@ -250,6 +250,14 @@ void UpdatePlayer(void)
 
 
 		break;
+
+	case 7:
+		g_Player[0].hp--;
+		g_Player[0].y = g_Player[0].old_y;
+		g_Player[0].x = g_Player[0].old_x;
+		SetMessage(4);
+
+		break;
 	}
 
 
