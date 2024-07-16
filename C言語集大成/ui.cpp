@@ -7,6 +7,8 @@ bool isMessageMode;
 
 
 
+
+
 char UI_org[DISP_H][DISP_W + 1] = {
 	"                                                  | STATUS                      ",
 	"                                                  |  HP:                        ",
@@ -27,9 +29,9 @@ char UI_org[DISP_H][DISP_W + 1] = {
 	"--------------------------------------------------------------------------------",
 	"           Use WASD to move    J:Attack    K:Shoot    L:Hook                    ",
 	"                                                                                ",
+	"            @:Stone       ~~~:River         #:Door                              ",
 	"                                                                                ",
-	"                                                                                ",
-	"                                                                                ",
+	"            E:Enemy       B:Box                                                 ",
 	"                                                                                ",
 	"                                                                                ",
 };
@@ -82,6 +84,8 @@ void UpdateUI() {
 
 }
 
+
+
 void DrawUI() {
 	/* 画面クリア */
 	std::system("cls");
@@ -94,7 +98,11 @@ void DrawUI() {
 	if (isMessageMode) {
 		//Message表示、時間止まる
 		while (true) {
-			if (_kbhit() && _getch() == ' ') {
+			/*if (_kbhit() && _getch() == ' ') {
+				break;
+			}*/
+			char Space = GetKeyState(' ');
+			if (_kbhit() && Space < 0) {
 				break;
 			}
 		}
@@ -161,6 +169,10 @@ void checkHeartFra() {
 		g_Player[0].hpMax += 1;
 		g_Player[0].hp = g_Player[0].hpMax;
 	}
+	else
+	{
+		g_Player[0].hp = g_Player[0].hpMax;
+	}
 }
 
 char MessageBar_org[Message_h][Message_w + 1] = {
@@ -213,14 +225,14 @@ void DrawMessage()
 void SetMessage(int type) {
 	isMessageMode = true;
 
-	//0:arrow+5  1:lifeFra+1  2:heal+1  3:key+1
+	//0:arrow+5  1:lifeFra+1  2:key+1  3:door open 4:fall into water
 	switch (type)
 	{
 	case 0:
 		//矢をGETのMessage
 	{
-		char comment[] = "Arrow 5 pieces get!";
-		memcpy(&MessageBar_org[4][15], comment, 19);
+		char comment[] = "Arrow 10 pieces get!";
+		memcpy(&MessageBar_org[4][15], comment, 20);
 
 		//Messageを入力する
 
@@ -237,8 +249,8 @@ void SetMessage(int type) {
 			memcpy(&MessageBar_org[6][3], comment2, 43);
 		}
 		else {
-			char comment2[] = "4 pieces to increase your maxinum life!";
-			memcpy(&MessageBar_org[6][5], comment2, 39);
+			char comment2[] = "4 pieces to increase your maxinum life";
+			memcpy(&MessageBar_org[6][5], comment2, 38);
 		}
 
 		checkHeartFra();

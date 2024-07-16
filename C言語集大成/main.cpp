@@ -20,6 +20,7 @@
 #include "stone.h"
 #include "door.h"
 #include "menu.h"
+#include "gameover.h"
 
 /*******************************************************************************
 * マクロ定義
@@ -172,7 +173,12 @@ void Update(void)
 
 		break;
 
+	case GAME_OVER:
+		UpdateOver();
+		break;
+
 	case GAME_CLEAR:
+		UpdateClear();
 
 		break;
 
@@ -224,6 +230,14 @@ void Draw(void)
 
 		break;
 
+	case GAME_OVER:
+		DrawOver();
+		break;
+
+	case GAME_CLEAR:
+		DrawClear();
+		break;
+
 
 		// 本来はここへ他のゲームモードを追加する
 		// 例えば、フィールドとかバトルとか、エンディングとか、、、
@@ -245,6 +259,7 @@ int GetMode(void)
 // ゲームモードを変更する
 void SetMode(int mode)
 {
+
 	g_Mode = mode;
 }
 

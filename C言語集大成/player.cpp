@@ -71,25 +71,31 @@ void InitPlayer(void)
 
 
 	//èâä˙âª
-	g_Player[0].y = 2;
-	g_Player[0].x = 2;
+	g_Player[0].y = 61;
+	g_Player[0].x = 78;
+
+	//test
+	/*g_Player[0].y = 6;
+	g_Player[0].x = 145;*/
+
+
 	g_Player[0].hp = 3;
 	g_Player[0].hpMax = 3;
 
 
 	g_Player[0].flag = 0;
 
-	playerMoveSpeed = 4;
+	playerMoveSpeed = 3;
 
 	//playerActionSpeed = 4;
 
-	g_Player[0].arrownum = 5;
+	g_Player[0].arrownum = 10;
 
 	g_Player[0].arrowIsOut = 0;
 
 	g_Player[0].isAttack = false;
 
-	g_Player[0].heartFraNum = 3;
+	g_Player[0].heartFraNum = 0;
 
 	g_Player[0].keyNum = 0;
 }
@@ -106,7 +112,8 @@ void UninitPlayer(void)
 void UpdatePlayer(void)
 {
 	if (g_Player[0].hp <= 0) {
-		SetMode(GAME_END);
+		SetMode(GAME_OVER);
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
 		return;
 	}//0Ç»ÇÁÇ ÇØÇÈ
 
@@ -238,7 +245,8 @@ void UpdatePlayer(void)
 
 	case 5://DOORÇ…Ç†ÇΩÇÈ
 		if (g_Player[0].keyNum > 0) {
-			door[CheckDoor(g_Player[0].y, g_Player[0].x)].opened = TRUE;
+			int doornum = CheckDoor(g_Player[0].y, g_Player[0].x);
+			door[doornum].opened = TRUE;
 			g_Player[0].keyNum--;
 			SetMessage(3);//DOORÇäJÇØÇÈMessage
 
@@ -258,6 +266,10 @@ void UpdatePlayer(void)
 		g_Player[0].x = g_Player[0].old_x;
 		SetMessage(4);
 
+		break;
+
+	case 8:
+		SetMode(GAME_CLEAR);
 		break;
 	}
 

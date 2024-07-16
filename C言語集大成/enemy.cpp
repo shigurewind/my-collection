@@ -49,14 +49,66 @@ void InitEnemy(void)
 		g_Enemy[i].alive = true;
 	}
 
-	g_Enemy[0].y = 5;
-	g_Enemy[0].x = 25;
+	g_Enemy[0].y = 50;
+	g_Enemy[0].x = 77;
 
-	g_Enemy[1].y = 7;
-	g_Enemy[1].x = 30;
+	g_Enemy[1].y = 53;
+	g_Enemy[1].x = 92;
 
-	g_Enemy[2].y = 6;
-	g_Enemy[2].x = 20;
+	g_Enemy[2].y = 51;
+	g_Enemy[2].x = 54;
+
+	g_Enemy[3].y = 56;
+	g_Enemy[3].x = 18;
+
+	g_Enemy[4].y = 31;
+	g_Enemy[4].x = 55;
+
+	g_Enemy[5].y = 33;
+	g_Enemy[5].x = 89;
+
+
+	g_Enemy[6].y = 35;
+	g_Enemy[6].x = 22;
+
+	g_Enemy[7].y = 25;
+	g_Enemy[7].x = 36;
+
+	g_Enemy[8].y = 22;
+	g_Enemy[8].x = 76;
+
+	g_Enemy[9].y = 25;
+	g_Enemy[9].x = 113;
+
+	g_Enemy[10].y = 18;
+	g_Enemy[10].x = 114;
+
+	g_Enemy[11].y = 14;
+	g_Enemy[11].x = 65;
+
+	g_Enemy[12].y = 13;
+	g_Enemy[12].x = 74;
+
+	g_Enemy[13].y = 8;
+	g_Enemy[13].x = 22;
+
+	g_Enemy[14].y = 6;
+	g_Enemy[14].x = 52;
+
+	g_Enemy[15].y = 4;
+	g_Enemy[15].x = 30;
+
+	g_Enemy[16].y = 7;
+	g_Enemy[16].x = 135;
+
+	g_Enemy[17].y = 42;
+	g_Enemy[17].x = 137;
+
+	g_Enemy[18].y = 61;
+	g_Enemy[18].x = 92;
+
+
+
 
 	enemySpeed = 30;
 }
@@ -116,7 +168,8 @@ void UpdateEnemy(void)
 			case 1:
 			case 5:
 			case 6:
-			case 7:// ˆÚ“®‚µ‚Ä‚ÍNG‚ÈêŠ‚¾‚Á‚½‚Ì‚Å‘O‚ÌêŠ‚Ö–ß‚·
+			case 7:
+			case 8:// ˆÚ“®‚µ‚Ä‚ÍNG‚ÈêŠ‚¾‚Á‚½‚Ì‚Å‘O‚ÌêŠ‚Ö–ß‚·
 				g_Enemy[i].y = g_Enemy[i].old_y;
 				g_Enemy[i].x = g_Enemy[i].old_x;
 				break;

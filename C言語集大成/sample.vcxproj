@@ -132,6 +132,7 @@
     <ClCompile Include="door.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="field.cpp" />
+    <ClCompile Include="gameover.cpp" />
     <ClCompile Include="hook.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="door.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="field.h" />
+    <ClInclude Include="gameover.h" />
     <ClInclude Include="hook.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="menu.h" />

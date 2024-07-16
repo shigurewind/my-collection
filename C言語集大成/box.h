@@ -2,7 +2,7 @@
 #include "main.h"
 #include "player.h"
 
-#define BOX_MAX (10)
+#define BOX_MAX (18)
 
 
 struct BOX
@@ -10,7 +10,7 @@ struct BOX
 
 
 	//•ó” ‚Ìí—Ş
-	//‚O‚Í–î+5@‚P‚Í¶–½”j•Ğ+1@‚Q‚ÍŒ®
+	//‚O‚Í–î+10@‚P‚Í¶–½”j•Ğ+1@‚Q‚ÍŒ®
 	int type;
 
 	//•ó” ‚ÌˆÊ’u
@@ -21,6 +21,8 @@ struct BOX
 	bool use;
 
 };
+
+extern BOX box[];
 
 
 void InitBox(void);

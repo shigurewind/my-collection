@@ -3,7 +3,7 @@
 #include "main.h"
 
 
-#define STONEMAX (10)
+#define STONEMAX (13)
 
 struct STONE
 {

@@ -40,11 +40,13 @@ enum {
 
 	GAME_FIELD, //Field　mode
 
+	GAME_OVER,	//Game Over mode
 
+	GAME_CLEAR,//GAME CLEAR
 
 	GAME_END,//GAME OVER
 
-	GAME_CLEAR,//GAME CLEAR
+
 };
 
 #define		DISP_H		(24)	// 表示画面の縦サイズ

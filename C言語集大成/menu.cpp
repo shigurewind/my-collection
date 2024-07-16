@@ -195,6 +195,7 @@ void UpdateMenu() {
 						break;
 					case 2:
 						//Game Exit
+						exit(0);
 
 						break;
 					}
