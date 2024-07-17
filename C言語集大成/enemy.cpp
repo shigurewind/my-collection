@@ -113,7 +113,7 @@ void InitEnemy(void)
 
 
 
-	enemySpeed = 20;
+	enemySpeed = 40;
 }
 
 

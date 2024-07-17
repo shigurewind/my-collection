@@ -85,7 +85,7 @@ void InitPlayer(void)
 
 	g_Player[0].flag = 0;
 
-	playerMoveSpeed = 3;
+	playerMoveSpeed = 5;
 
 	//playerActionSpeed = 4;
 
@@ -137,7 +137,8 @@ void UpdatePlayer(void)
 	if (_kbhit())
 	{
 		//ˆÚ“®
-		if (interval % playerMoveSpeed == 0) {
+		if (interval % playerMoveSpeed == 0)
+		{
 			if (key_W < 0)
 			{
 				g_Player[0].y -= 1;
@@ -174,6 +175,8 @@ void UpdatePlayer(void)
 				jPressed = true;
 				Attack();
 			}
+
+			/*Attack();*/
 		}
 
 		//shoot
@@ -215,7 +218,7 @@ void UpdatePlayer(void)
 	if (key_L >= 0) {
 		lPressed = false;
 	}
-	//Sleep(3);
+	Sleep(3);
 
 
 	// MAP‚Æ‚Ì“–‚½‚è”»’èˆ—
