@@ -68,8 +68,8 @@ void InitEnemy(void)
 	g_Enemy[5].x = 89;
 
 
-	g_Enemy[6].y = 35;
-	g_Enemy[6].x = 22;
+	g_Enemy[6].y = 38;
+	g_Enemy[6].x = 21;
 
 	g_Enemy[7].y = 25;
 	g_Enemy[7].x = 36;
@@ -107,10 +107,13 @@ void InitEnemy(void)
 	g_Enemy[18].y = 61;
 	g_Enemy[18].x = 92;
 
+	g_Enemy[18].y = 52;
+	g_Enemy[18].x = 114;
 
 
 
-	enemySpeed = 30;
+
+	enemySpeed = 20;
 }
 
 
@@ -206,6 +209,9 @@ void DrawEnemy(void)
 {
 
 	for (int i = 0; i < ENEMY_MAX; i++) {
+		if (CheckField(g_Enemy[i].y, g_Enemy[i].x) == 7) {
+			g_Enemy[i].alive = FALSE;
+		}
 		if (g_Enemy[i].alive == true) {
 			// プレイヤーをMAPの指定座標へ書き込む
 			SetField(g_Enemy[i].y, g_Enemy[i].x, 'E');
@@ -214,6 +220,8 @@ void DrawEnemy(void)
 	}
 
 }
+
+
 
 
 
